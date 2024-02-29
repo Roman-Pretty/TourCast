@@ -3,6 +3,7 @@
 
 $header: #202020;
 $text:  #EDF2F4;
+$background: #2B2D42;
 
 body {
     color: $text;
@@ -12,6 +13,10 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    height: 100vh;
+    width: 100vw;
+    background: $background;
+    background: linear-gradient(320deg, rgba(63,66,102,1) 0%, rgba(43,45,66,1) 100%);
 }
 
 header {

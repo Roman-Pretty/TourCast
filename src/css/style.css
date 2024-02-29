@@ -8,6 +8,10 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  height: 100vh;
+  width: 100vw;
+  background: #2B2D42;
+  background: linear-gradient(320deg, rgb(63, 66, 102) 0%, rgb(43, 45, 66) 100%);
 }
 
 header {
