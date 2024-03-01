@@ -34,4 +34,8 @@ nav ul {
   display: flex;
   gap: 1.6rem;
   margin-left: 2rem;
+}
+
+#space {
+  width: 18rem;
 }/*# sourceMappingURL=style.css.map */
