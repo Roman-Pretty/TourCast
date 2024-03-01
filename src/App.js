@@ -6,6 +6,7 @@ import { ReactComponent as RunIcon } from './img/menu_icons/directions_run.svg';
 import { ReactComponent as PollutionIcon } from './img/menu_icons/Pollution 1.svg';
 import { ReactComponent as WindIcon } from './img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from './img/menu_icons/cloud.svg';
+import { ReactComponent as DownIcon } from './img/menu_icons/chevron-bottom.svg';
 
 function Nav() {
   return (
@@ -23,8 +24,9 @@ function Nav() {
 
 function Title() {
   return (
-    <div>
+    <div id="title">
       <h1>London</h1>
+      <DownIcon />
     </div>
   );
 }
