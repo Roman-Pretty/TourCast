@@ -5,16 +5,24 @@ import { ReactComponent as PollutionIcon } from './img/menu_icons/Pollution 1.sv
 import { ReactComponent as WindIcon } from './img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from './img/menu_icons/cloud.svg';
 
+function Tooltip({text}) {
+    return (
+      <p class="tooltip">
+        {text}
+      </p>
+    );
+}
+
 function Nav() {
     return (
       <nav>
         <div id="selected"></div>
         <ul>
-          <li><a href="#dashboard"><MenuIcon /></a></li>
-          <li><a href="#activities"><RunIcon /></a></li>
-          <li><a href="#weather"><CloudIcon /></a></li>
-          <li><a href="#wind"><WindIcon /></a></li>
-          <li><a href="#pollution"><PollutionIcon /></a></li>
+          <li><a href="#dashboard"><MenuIcon /></a><Tooltip text="Dashboard" /></li>
+          <li><a href="#activities"><RunIcon /></a><Tooltip text="Activities" /></li>
+          <li><a href="#weather"><CloudIcon /></a><Tooltip text="Weather" /></li>
+          <li><a href="#wind"><WindIcon /></a><Tooltip text="Wind" /></li>
+          <li><a href="#pollution"><PollutionIcon /></a><Tooltip text="Pollution" /></li>
         </ul>
       </nav>
     );

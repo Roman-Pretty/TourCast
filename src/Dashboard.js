@@ -2,7 +2,6 @@ import './css/App.css';
 import React from 'react';
 import { ReactComponent as Cloudy } from './img/weather/cloudy.svg';
 
-
 const Dashboard = () => {
     return (
     <div id="today-weather">

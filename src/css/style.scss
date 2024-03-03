@@ -47,6 +47,30 @@ header {
             display: flex;
             gap: 1.6rem;
             margin-left: 2rem;
+
+            li {
+                list-style: none;
+                display: flex;
+                align-self: center;
+                justify-content: center;
+            
+                .tooltip {
+                    position: absolute;
+                    font-size: 1rem;
+                    top: 5rem;
+                    background-color: $header;
+                    color: $text;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 0.7rem;
+                    padding: 0.4rem;
+                    visibility: hidden;                   
+                }
+            }   
+            li:hover .tooltip {
+                visibility: visible;
+
+            }
         }
 
         #selected {

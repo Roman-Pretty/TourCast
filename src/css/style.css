@@ -40,6 +40,27 @@ header nav ul {
   gap: 1.6rem;
   margin-left: 2rem;
 }
+header nav ul li {
+  list-style: none;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+header nav ul li .tooltip {
+  position: absolute;
+  font-size: 1rem;
+  top: 5rem;
+  background-color: #202020;
+  color: #EDF2F4;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 0.7rem;
+  padding: 0.4rem;
+  visibility: hidden;
+}
+header nav ul li:hover .tooltip {
+  visibility: visible;
+}
 header nav #selected {
   background-color: #EF233C;
   position: absolute;
