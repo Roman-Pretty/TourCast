@@ -1,5 +1,6 @@
 @import './reset.css';
 @import url("https://fonts.googleapis.com/css2?family=Shanti&display=swap");
+/* General */
 body {
   color: #EDF2F4;
   text-align: center;
@@ -14,23 +15,23 @@ body {
   background: linear-gradient(320deg, rgb(63, 66, 102) 0%, rgb(43, 45, 66) 100%);
 }
 
+/* Header */
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 75px;
+  height: 4.7rem;
   background-color: #202020;
   color: #EDF2F4;
   font-size: 1.6rem;
   z-index: -1;
 }
-
-nav {
+header nav {
   z-index: 0;
 }
-nav ul {
+header nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,17 +40,16 @@ nav ul {
   gap: 1.6rem;
   margin-left: 2rem;
 }
-nav #selected {
+header nav #selected {
   background-color: #EF233C;
   position: absolute;
   width: 4rem;
-  height: 75px;
+  height: 4.7rem;
   top: 0;
   left: 1rem;
   z-index: -2;
 }
-
-select {
+header select {
   color: #EDF2F4;
   font-family: Shanti;
   font-style: normal;
@@ -63,22 +63,64 @@ select {
        text-align-last: center;
   cursor: pointer;
 }
-
-option {
+header option {
   color: black;
   font-size: 1rem;
 }
-option * {
+header option * {
   margin: 1rem;
 }
-
-#title {
+header #title {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.2rem;
 }
-
-#space {
+header #space {
   width: 18rem;
+}
+
+#today-weather {
+  position: absolute;
+  left: 9.25rem;
+  top: 10.44rem;
+  display: flex;
+  width: 29.9375rem;
+  justify-content: space-between;
+  align-items: center;
+}
+#today-weather #today-weather-text {
+  color: #EDF2F4;
+  width: 15.125rem;
+  height: 17.99563rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: first baseline;
+}
+#today-weather #today-weather-text #title {
+  display: flex;
+  width: 15.125rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.375rem;
+}
+#today-weather #today-weather-text #title h1 {
+  font-family: Shanti;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#today-weather #today-weather-text #title p {
+  font-size: 1.5rem;
+  color: #8D99AE;
+}
+#today-weather #today-weather-text #temperature {
+  font-family: Shanti;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }/*# sourceMappingURL=style.css.map */
