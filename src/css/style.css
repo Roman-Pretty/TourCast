@@ -24,8 +24,12 @@ header {
   background-color: #202020;
   color: #EDF2F4;
   font-size: 1.6rem;
+  z-index: -1;
 }
 
+nav {
+  z-index: 0;
+}
 nav ul {
   display: flex;
   flex-direction: row;
@@ -34,6 +38,38 @@ nav ul {
   display: flex;
   gap: 1.6rem;
   margin-left: 2rem;
+}
+nav #selected {
+  background-color: #EF233C;
+  position: absolute;
+  width: 4rem;
+  height: 75px;
+  top: 0;
+  left: 1rem;
+  z-index: -2;
+}
+
+select {
+  color: #EDF2F4;
+  font-family: Shanti;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 20rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  cursor: pointer;
+}
+
+option {
+  color: black;
+  font-size: 1rem;
+}
+option * {
+  margin: 1rem;
 }
 
 #title {

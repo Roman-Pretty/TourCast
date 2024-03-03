@@ -4,6 +4,7 @@
 $header: #202020;
 $text:  #EDF2F4;
 $background: #2B2D42;
+$primary: #EF233C;
 
 body {
     color: $text;
@@ -29,16 +30,50 @@ header {
     background-color: $header;
     color: $text;
     font-size: 1.6rem;
+    z-index: -1;
+}
+nav {
+    z-index: 0;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        gap: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    #selected {
+        background-color: $primary;
+        position: absolute;
+        width: 4rem;
+        height: 75px;
+        top: 0;
+        left: 1rem;
+        z-index: -2;
+    }
 }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    gap: 1.6rem;
-    margin-left: 2rem;
+select {
+    color: $text;
+    font-family: Shanti;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    max-width: 20rem;
+    appearance: none;
+    text-align-last: center;
+    cursor: pointer;
+}
+
+option {
+    color: black;
+    font-size: 1rem;
+
+    * {
+        margin: 1rem;
+    }
 }
 
 #title {

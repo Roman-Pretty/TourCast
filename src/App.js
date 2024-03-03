@@ -11,12 +11,13 @@ import { ReactComponent as DownIcon } from './img/menu_icons/chevron-bottom.svg'
 function Nav() {
   return (
     <nav>
+      <div id="selected"></div>
       <ul>
-        <li><a href="/"><MenuIcon /></a></li>
-        <li><a href="/"><RunIcon /></a></li>
-        <li><a href="/"><CloudIcon /></a></li>
-        <li><a href="/"><WindIcon /></a></li>
-        <li><a href="/weather"><PollutionIcon /></a></li>
+        <li><a href="#dashboard"><MenuIcon /></a></li>
+        <li><a href="#activities"><RunIcon /></a></li>
+        <li><a href="#weather"><CloudIcon /></a></li>
+        <li><a href="#wind"><WindIcon /></a></li>
+        <li><a href="#pollution"><PollutionIcon /></a></li>
       </ul>
     </nav>
   );
@@ -24,10 +25,14 @@ function Nav() {
 
 function Title() {
   return (
-    <div id="title">
-      <h1>London</h1>
-      <DownIcon />
-    </div>
+    <select>
+      <option value="london" selected>London</option>
+      <option value="newyork">New York</option>
+      <option value="losangeles">Los Angeles</option>
+      <option value="chicago">Chicago</option>
+      <option value="miami">Miami</option>
+      <option value="sanfrancisco">San Francisco</option>
+    </select>
   );
 }
 
