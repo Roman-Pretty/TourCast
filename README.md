@@ -14,6 +14,24 @@ TourCast is a weather app that provides real-time weather information using the 
 - HTML, CSS, JavaScript, React
 - OpenWeatherAPI
 
+## Installation
+
+To get started with TourCast, follow these steps:
+
+1. Make sure you have Node.js installed. If not, you can download it from the official website: [Node.js](https://nodejs.org/).
+
+2. Open the project in VS Code and navigate to the project directory in the terminal.
+
+3. Run the following commands to install the required dependencies:
+
+    ```bash
+    npm install
+    ```
+    ```bash
+    npm install axios
+    ```
+4. You are now ready to run the app.
+
 ## Usage
 
 **Please note, this functionality describes the App in its current state, and is certain to change**
