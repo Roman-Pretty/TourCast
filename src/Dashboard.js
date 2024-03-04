@@ -2,8 +2,15 @@ import './css/App.css';
 import React from 'react';
 import { ReactComponent as Cloudy } from './img/weather/cloudy.svg';
 
-const Dashboard = () => {
-    return (
+function Background() {
+  return 
+  (
+    <div id="bg"></div>
+  )
+}
+
+function TodayWeather() {
+  return (
     <div id="today-weather">
         <div id="today-weather-text">
             <section id="title">
@@ -13,7 +20,17 @@ const Dashboard = () => {
             <h1 id="temperature">21°</h1>
         </div>
         <Cloudy />
+    </div>
+  );
+}
+
+const Dashboard = () => {
+    return (
+      <div>
+        <TodayWeather />
+        <Background />
       </div>
+      
     );
   };
   export default Dashboard;
