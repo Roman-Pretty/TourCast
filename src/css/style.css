@@ -1,6 +1,8 @@
 @import './reset.css';
 @import url("https://fonts.googleapis.com/css2?family=Shanti&display=swap");
-/* General */
+/*************
+ * All Pages *
+ *************/
 body {
   color: #EDF2F4;
   text-align: center;
@@ -12,7 +14,7 @@ body {
   height: 100vh;
   width: 100vw;
   background: #2B2D42;
-  background: linear-gradient(320deg, rgb(63, 66, 102) 0%, rgb(43, 45, 66) 100%);
+  background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
 }
 
 /* Header */
@@ -101,6 +103,17 @@ header #space {
   width: 18rem;
 }
 
+/*************
+ * Dashboard *
+ *************/
+#dashboard > svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  scale: 100%;
+  z-index: -10;
+}
+
 #today-weather {
   position: absolute;
   left: 9.25rem;
@@ -144,4 +157,8 @@ header #space {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*************
+ * Wind Page *
+ *************//*# sourceMappingURL=style.css.map */

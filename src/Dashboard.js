@@ -1,13 +1,7 @@
 import './css/App.css';
 import React from 'react';
 import { ReactComponent as Cloudy } from './img/weather/cloudy.svg';
-
-function Background() {
-  return 
-  (
-    <div id="bg"></div>
-  )
-}
+import { ReactComponent as Background } from './img/bg.svg';
 
 function TodayWeather() {
   return (
@@ -26,7 +20,7 @@ function TodayWeather() {
 
 const Dashboard = () => {
     return (
-      <div>
+      <div id="dashboard">
         <TodayWeather />
         <Background />
       </div>
