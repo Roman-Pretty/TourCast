@@ -66,8 +66,7 @@ const Dashboard = () => {
         <TodayWeather />
         <Forecast />
         <Background />
-      </div>
-      
+      </div>      
     );
   };
   export default Dashboard;
