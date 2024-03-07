@@ -106,6 +106,7 @@ header #space {
 /*************
  * Dashboard *
  *************/
+/* Background */
 #dashboard > svg {
   position: absolute;
   right: 0;
@@ -154,6 +155,76 @@ header #space {
 #today-weather #today-weather-text #temperature {
   font-family: Shanti;
   font-size: 6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Weekly Forecast */
+#forecast {
+  display: flex;
+  width: 64.1875rem;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.75;
+  color: #8D99AE;
+  position: absolute;
+  right: 9.31rem;
+  top: 11.75rem;
+}
+
+.week-item {
+  display: flex;
+  width: 14.875rem;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+}
+.week-item .week-item-divider {
+  width: 0.125rem;
+  height: 5.6875rem;
+  position: absolute;
+  left: 0rem;
+  top: 0.8125rem;
+}
+.week-item .week-item-content {
+  display: flex;
+  width: 12.75rem;
+  height: 7.6875rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.week-item .week-item-content svg {
+  width: 7.5rem;
+  height: 5.625rem;
+  flex-shrink: 0;
+}
+.week-item .week-item-content .week-item-text {
+  display: flex;
+  width: 4.4375rem;
+  height: 6.0625rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: self-start;
+  text-align: left;
+  flex-shrink: 0;
+}
+.week-item .week-item-content .week-item-text h3 {
+  width: 5.0625rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  color: #EDF2F4;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.week-item .week-item-content .week-item-text p {
+  width: 4.125rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
