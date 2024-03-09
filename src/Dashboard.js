@@ -7,15 +7,23 @@ import { ReactComponent as SunWeek } from './img/weather/week/Sun.svg';
 import { ReactComponent as StormyWeek } from './img/weather/week/Stormy.svg';
 import { ReactComponent as CloudyWeek } from './img/weather/week/Cloudy.svg';
 
-function TodayWeather() {
+function TodayWeather({weatherData}) {
+
+  let temperature = 0
+  let feelsLike = 0
+  if (weatherData != null) {
+    temperature = Math.round(weatherData.main.temp)
+    feelsLike = weatherData.main.feels_like
+  }
+
   return (
     <div id="today-weather">
         <div id="today-weather-text">
             <section id="title">
                 <h1>Today</h1>
-                <p>Chance of rain: 0%</p>
+                <p>Feels like {feelsLike}°</p>
             </section>
-            <h1 id="temperature">21°</h1>
+            <h1 id="temperature">{temperature}°</h1>
         </div>
         <Cloudy />
     </div>
@@ -60,10 +68,10 @@ function Forecast() {
   );
 }
 
-const Dashboard = () => {
+const Dashboard = ({weatherData}) => {
     return (
       <div id="dashboard">
-        <TodayWeather />
+        <TodayWeather weatherData={weatherData}/>
         <Forecast />
         <Background />
       </div>      

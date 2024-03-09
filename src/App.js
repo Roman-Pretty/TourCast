@@ -1,15 +1,18 @@
 import './css/App.css';
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import Dashboard from './Dashboard';
-import Weather from './Weather';
+
+export const Context = React.createContext();
 
 const App = () => {
+
+  const [weatherData, setWeatherData] = useState(null);
   return (
-    <div>
+    <Context.Provider value={[weatherData, setWeatherData]}>
       <Header />
-      <Dashboard />
-    </div>
+      <Dashboard weatherData={weatherData}/>
+    </Context.Provider>
   );
 };
 export default App;
