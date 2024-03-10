@@ -5,6 +5,7 @@ import { ReactComponent as PollutionIcon } from './img/menu_icons/Pollution 1.sv
 import { ReactComponent as WindIcon } from './img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from './img/menu_icons/cloud.svg';
 import { Context } from './App';
+import { WeekContext } from './App';
 import axios from 'axios';
 
 function Tooltip({text}) {
@@ -34,13 +35,22 @@ function Nav() {
 
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useContext(Context);
+    const [weekData, setWeekData] = useContext(WeekContext);
     const fetchData = async (selectedCity) => {
       try {
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
         );
         setWeatherData(response.data);
-        console.log(response.data); //You can see all the weather data in console log
+      } catch (error) {
+        console.error(error);
+      }
+
+      try {
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast/?q=${selectedCity}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
+        );
+        setWeekData(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -56,14 +66,31 @@ function Nav() {
 
     return (
       <form id="form">
-        <select id="dropdown" value={city} onChange={handleSubmit}>
-          <option value="london">London</option>
-          <option value="new york">New York</option>
-          <option value="los angeles">Los Angeles</option>
-          <option value="chicago">Chicago</option>
-          <option value="miami">Miami</option>
-          <option value="san francisco">San Francisco</option>
-        </select>
+      <select id="dropdown" value={city} onChange={handleSubmit}>
+        <option value="atlanta">Atlanta</option>
+        <option value="austin">Austin</option>
+        <option value="boston">Boston</option>
+        <option value="chicago">Chicago</option>
+        <option value="dallas">Dallas</option>
+        <option value="denver">Denver</option>
+        <option value="houston">Houston</option>
+        <option value="las vegas">Las Vegas</option>
+        <option value="london">London</option>
+        <option value="los angeles">Los Angeles</option>
+        <option value="mexico city">Mexico City</option>
+        <option value="miami">Miami</option>
+        <option value="new york">New York</option>
+        <option value="orlando">Orlando</option>
+        <option value="philadelphia">Philadelphia</option>
+        <option value="phoenix">Phoenix</option>
+        <option value="rome">Rome</option>
+        <option value="san antonio">San Antonio</option>
+        <option value="san diego">San Diego</option>
+        <option value="san francisco">San Francisco</option>
+        <option value="san jose">San Jose</option>
+        <option value="seattle">Seattle</option>
+        <option value="washington">Washington</option>
+      </select>
       </form>
     );
     }
