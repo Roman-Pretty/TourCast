@@ -67,29 +67,45 @@ function Nav() {
     return (
       <form id="form">
       <select id="dropdown" value={city} onChange={handleSubmit}>
-        <option value="atlanta">Atlanta</option>
-        <option value="austin">Austin</option>
-        <option value="boston">Boston</option>
-        <option value="chicago">Chicago</option>
-        <option value="dallas">Dallas</option>
-        <option value="denver">Denver</option>
-        <option value="houston">Houston</option>
-        <option value="las vegas">Las Vegas</option>
-        <option value="london">London</option>
-        <option value="los angeles">Los Angeles</option>
-        <option value="mexico city">Mexico City</option>
-        <option value="miami">Miami</option>
-        <option value="new york">New York</option>
-        <option value="orlando">Orlando</option>
-        <option value="philadelphia">Philadelphia</option>
-        <option value="phoenix">Phoenix</option>
-        <option value="rome">Rome</option>
-        <option value="san antonio">San Antonio</option>
-        <option value="san diego">San Diego</option>
-        <option value="san francisco">San Francisco</option>
-        <option value="san jose">San Jose</option>
-        <option value="seattle">Seattle</option>
-        <option value="washington">Washington</option>
+        <optgroup label="UK">
+          <option value="london">London</option>
+          <option value="birmingham">Birmingham</option>
+          <option value="bristol">Bristol</option>
+          <option value="edinburgh">Edinburgh</option>
+          <option value="glasgow">Glasgow</option>
+          <option value="leeds">Leeds</option>
+          <option value="liverpool">Liverpool</option>
+          <option value="manchester">Manchester</option>
+          <option value="newcastle">Newcastle</option>
+          <option value="nottingham">Nottingham</option>
+          <option value="norwich">Norwich</option>
+        </optgroup>
+        <optgroup label="USA">
+          <option value="atlanta">Atlanta</option>
+          <option value="austin">Austin</option>
+          <option value="boston">Boston</option>
+          <option value="chicago">Chicago</option>
+          <option value="dallas">Dallas</option>
+          <option value="denver">Denver</option>
+          <option value="houston">Houston</option>
+          <option value="las vegas">Las Vegas</option>
+          <option value="los angeles">Los Angeles</option>
+          <option value="miami">Miami</option>
+          <option value="new york">New York</option>
+          <option value="orlando">Orlando</option>
+          <option value="philadelphia">Philadelphia</option>
+          <option value="phoenix">Phoenix</option>
+          <option value="san antonio">San Antonio</option>
+          <option value="san diego">San Diego</option>
+          <option value="san francisco">San Francisco</option>
+          <option value="san jose">San Jose</option>
+          <option value="seattle">Seattle</option>
+          <option value="washington">Washington</option>
+        </optgroup>
+        <optgroup label="Other Countries">
+          <option value="mexico city">Mexico City</option>
+          <option value="rome">Rome</option>
+        </optgroup>
       </select>
       </form>
     );
