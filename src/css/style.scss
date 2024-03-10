@@ -155,13 +155,15 @@ header {
 
 /* Background */
 
- #dashboard > svg {
+ #dashboard > svg, #activities > svg {
     position: absolute;
     right: 0;
     bottom: 0;
     scale: 100%;
     z-index: -10;
 }
+
+
 
 #dashboard {
 

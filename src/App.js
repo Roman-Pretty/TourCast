@@ -2,6 +2,7 @@ import './css/App.css';
 import React, {useState} from 'react';
 import Header from './Header';
 import Dashboard from './Dashboard';
+import Activities from './Activities';
 
 export const DayContext = React.createContext();
 export const WeekContext = React.createContext();
@@ -17,6 +18,8 @@ const App = () => {
 
   if (page == 'dashboard-page') {
     pageComponent = <Dashboard weatherData={weatherData} weekData={weekData} />;
+  } else if (page == 'activities-page') {
+    pageComponent = <Activities />;
   }
 
   return (

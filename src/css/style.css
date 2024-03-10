@@ -130,7 +130,7 @@ header #space {
  * Dashboard *
  *************/
 /* Background */
-#dashboard > svg {
+#dashboard > svg, #activities > svg {
   position: absolute;
   right: 0;
   bottom: 0;
