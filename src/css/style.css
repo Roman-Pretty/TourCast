@@ -17,6 +17,13 @@ body {
   background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Header */
 header {
   display: flex;
@@ -115,16 +122,22 @@ header #space {
   z-index: -10;
 }
 
-#today-weather {
-  position: absolute;
-  left: 9.25rem;
-  top: 10.44rem;
+#dashboard {
   display: flex;
+  width: 85vw;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: center;
+  margin-top: 5.75rem;
+  /* Weekly Forecast */
+}
+#dashboard #today-weather {
+  display: inherit;
   width: 29.9375rem;
   justify-content: space-between;
   align-items: center;
 }
-#today-weather #today-weather-text {
+#dashboard #today-weather #today-weather-text {
   color: #EDF2F4;
   width: 15.125rem;
   height: 17.99563rem;
@@ -134,60 +147,55 @@ header #space {
   justify-content: space-between;
   align-items: first baseline;
 }
-#today-weather #today-weather-text #title {
+#dashboard #today-weather #today-weather-text #title {
   display: flex;
   width: 15.125rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.375rem;
 }
-#today-weather #today-weather-text #title h1 {
+#dashboard #today-weather #today-weather-text #title h1 {
   font-family: Shanti;
   font-size: 3rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-#today-weather #today-weather-text #title p {
+#dashboard #today-weather #today-weather-text #title p {
   font-size: 1.5rem;
   color: #8D99AE;
 }
-#today-weather #today-weather-text #temperature {
+#dashboard #today-weather #today-weather-text #temperature {
   font-family: Shanti;
   font-size: 6rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-
-/* Weekly Forecast */
-#forecast {
+#dashboard #forecast {
   display: flex;
   width: 64.1875rem;
   justify-content: space-between;
   align-items: center;
   opacity: 0.75;
   color: #8D99AE;
-  position: absolute;
-  right: 9.31rem;
-  top: 11.75rem;
+  margin-top: 2rem;
 }
-
-.week-item {
+#dashboard .week-item {
   display: flex;
   width: 14.875rem;
   justify-content: flex-end;
   align-items: center;
   flex-shrink: 0;
 }
-.week-item .week-item-divider {
+#dashboard .week-item .week-item-divider {
   width: 0.125rem;
   height: 5.6875rem;
   position: absolute;
   left: 0rem;
   top: 0.8125rem;
 }
-.week-item .week-item-content {
+#dashboard .week-item .week-item-content {
   display: flex;
   width: 12.75rem;
   height: 7.6875rem;
@@ -195,12 +203,12 @@ header #space {
   align-items: center;
   flex-shrink: 0;
 }
-.week-item .week-item-content svg {
+#dashboard .week-item .week-item-content svg {
   width: 7.5rem;
   height: 5.625rem;
   flex-shrink: 0;
 }
-.week-item .week-item-content .week-item-text {
+#dashboard .week-item .week-item-content .week-item-text {
   display: flex;
   width: 4.4375rem;
   height: 6.0625rem;
@@ -210,7 +218,7 @@ header #space {
   text-align: left;
   flex-shrink: 0;
 }
-.week-item .week-item-content .week-item-text h3 {
+#dashboard .week-item .week-item-content .week-item-text h3 {
   width: 5.0625rem;
   height: 2.75rem;
   flex-shrink: 0;
@@ -220,7 +228,7 @@ header #space {
   font-weight: 400;
   line-height: normal;
 }
-.week-item .week-item-content .week-item-text p {
+#dashboard .week-item .week-item-content .week-item-text p {
   width: 4.125rem;
   height: 3.25rem;
   flex-shrink: 0;

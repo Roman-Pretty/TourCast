@@ -70,11 +70,13 @@ function Forecast() {
 
 const Dashboard = ({weatherData}) => {
     return (
-      <div id="dashboard">
-        <TodayWeather weatherData={weatherData}/>
-        <Forecast />
-        <Background />
-      </div>      
+      <div class="content">
+        <div id="dashboard">
+          <TodayWeather weatherData={weatherData}/>
+          <Forecast />
+          <Background />
+        </div>    
+      </div>  
     );
   };
   export default Dashboard;

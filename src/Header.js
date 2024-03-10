@@ -34,40 +34,39 @@ function Nav() {
 
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useContext(Context);
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
-            );
-            setWeatherData(response.data);
-            console.log(response.data); //You can see all the weather data in console log
-        } catch (error) {
-            console.error(error);
-        }
+    const fetchData = async (selectedCity) => {
+      try {
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
+        );
+        setWeatherData(response.data);
+        console.log(response.data); //You can see all the weather data in console log
+      } catch (error) {
+        console.error(error);
+      }
     };
     useEffect(() => {
-      fetchData();
-  }, []);
-  const handleSubmit = (e) => {
+      fetchData(city);
+    }, [city]);
+    const handleSubmit = (e) => {
       const selectedCity = e.target.value;
       setCity(selectedCity);
       e.preventDefault();
-      fetchData();
-  };
+    };
 
     return (
-      <form id="form" onSubmit={handleSubmit}>
-        <select id="dropdown" value={city} onChange={() => document.getElementById("form").submit()}>
+      <form id="form">
+        <select id="dropdown" value={city} onChange={handleSubmit}>
           <option value="london">London</option>
-          <option value="newyork">New York</option>
-          <option value="losangeles">Los Angeles</option>
+          <option value="new york">New York</option>
+          <option value="los angeles">Los Angeles</option>
           <option value="chicago">Chicago</option>
           <option value="miami">Miami</option>
-          <option value="sanfrancisco">San Francisco</option>
+          <option value="san francisco">San Francisco</option>
         </select>
       </form>
     );
-  }
+    }
   
   const Header = () => {
     return (
