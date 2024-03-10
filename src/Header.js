@@ -4,8 +4,7 @@ import { ReactComponent as RunIcon } from './img/menu_icons/directions_run.svg';
 import { ReactComponent as PollutionIcon } from './img/menu_icons/Pollution 1.svg';
 import { ReactComponent as WindIcon } from './img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from './img/menu_icons/cloud.svg';
-import { Context } from './App';
-import { WeekContext } from './App';
+import { DayContext, WeekContext, PageContext } from './App';
 import axios from 'axios';
 
 function Tooltip({text}) {
@@ -17,15 +16,18 @@ function Tooltip({text}) {
 }
 
 function Nav() {
+
+  const [page, setPage] = useContext(PageContext);
+
     return (
       <nav>
-        <div id="selected"></div>
+        <div id="selected" class={page}></div>
         <ul>
-          <li><a href="#dashboard"><MenuIcon /></a><Tooltip text="Dashboard" /></li>
-          <li><a href="#activities"><RunIcon /></a><Tooltip text="Activities" /></li>
-          <li><a href="#weather"><CloudIcon /></a><Tooltip text="Weather" /></li>
-          <li><a href="#wind"><WindIcon /></a><Tooltip text="Wind" /></li>
-          <li><a href="#pollution"><PollutionIcon /></a><Tooltip text="Pollution" /></li>
+          <li><a onClick={() => setPage("dashboard-page")}><MenuIcon /></a><Tooltip text="Dashboard" /></li>
+          <li><a onClick={() => setPage("activities-page")}><RunIcon /></a><Tooltip text="Activities" /></li>
+          <li><a onClick={() => setPage("weather-page")}><CloudIcon /></a><Tooltip text="Weather" /></li>
+          <li><a onClick={() => setPage("wind-page")}><WindIcon /></a><Tooltip text="Wind" /></li>
+          <li><a onClick={() => setPage("pollution-page")}><PollutionIcon /></a><Tooltip text="Pollution" /></li>
         </ul>
       </nav>
     );
@@ -34,7 +36,7 @@ function Nav() {
   function Title() {
 
     const [city, setCity] = useState('');
-    const [weatherData, setWeatherData] = useContext(Context);
+    const [weatherData, setWeatherData] = useContext(DayContext);
     const [weekData, setWeekData] = useContext(WeekContext);
     const fetchData = async (selectedCity) => {
       try {
@@ -56,7 +58,12 @@ function Nav() {
       }
     };
     useEffect(() => {
-      fetchData(city);
+      if (city) {
+        fetchData(city);
+      } else {
+        //TODO: Save default city in local storage
+        fetchData('London');
+      }
     }, [city]);
     const handleSubmit = (e) => {
       const selectedCity = e.target.value;

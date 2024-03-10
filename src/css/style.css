@@ -54,6 +54,7 @@ header nav ul li {
   display: flex;
   align-self: center;
   justify-content: center;
+  cursor: pointer;
 }
 header nav ul li .tooltip {
   position: absolute;
@@ -76,8 +77,23 @@ header nav #selected {
   width: 4rem;
   height: 4.7rem;
   top: 0;
-  left: 1rem;
   z-index: -2;
+  left: 1rem;
+}
+header nav .dashboard-page {
+  left: 1rem !important;
+}
+header nav .activities-page {
+  left: 4.5rem !important;
+}
+header nav .weather-page {
+  left: 8.2rem !important;
+}
+header nav .wind-page {
+  left: 11.7rem !important;
+}
+header nav .pollution-page {
+  left: 15.4rem !important;
 }
 header select {
   color: #EDF2F4;

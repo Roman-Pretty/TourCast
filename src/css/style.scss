@@ -62,6 +62,7 @@ header {
                 display: flex;
                 align-self: center;
                 justify-content: center;
+                cursor: pointer; 
             
                 .tooltip {
                     position: absolute;
@@ -88,9 +89,31 @@ header {
             width: 4rem;
             height: 4.7rem;
             top: 0;
-            left: 1rem;
             z-index: -2;
+            left: 1rem;           
         }
+
+        .dashboard-page {
+            left: 1rem !important;
+        }
+
+        .activities-page {
+            left: 4.5rem !important;
+        }
+
+        .weather-page {
+            left: 8.2rem !important;
+        }
+
+        .wind-page {
+            left: 11.7rem !important;
+        }
+
+        .pollution-page {
+            left: 15.4rem !important;
+        }
+
+        
     }
 
     select {
