@@ -19,7 +19,7 @@ const App = () => {
   if (page == 'dashboard-page') {
     pageComponent = <Dashboard weatherData={weatherData} weekData={weekData} />;
   } else if (page == 'activities-page') {
-    pageComponent = <Activities />;
+    pageComponent = <Activities weatherData={weatherData} weekData={weekData}/>;
   }
 
   return (
