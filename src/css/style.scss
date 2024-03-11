@@ -313,10 +313,25 @@ header {
 
  #activities {
 
+    margin-top: 6vh;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.1875rem;
+
+    h1 {
+        color: $text;
+        font-family: Shanti;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
     #card-array {
         display: flex;
         flex-direction: row;
-        width: 100.8125rem;
+        width: 85vw;
         height: 15rem;
         justify-content: space-between;
         align-items: flex-start;
@@ -392,10 +407,71 @@ header {
                 .bar {background: $danger;}
                 p {color: $danger;}
             }
-            .rating-unavailable {
-                .bar {background: $text;}
-                p {color: $text;}
+        }      
+     }
+    
+     .card:not(.card:has(.rating-unavailable)):hover {
+        transform: translateY(-5px) scale(1.005) translateZ(0);
+        box-shadow: 0px 9px 4px 0px rgba(0, 0, 0, 0.25);
+        transition: background-color 500ms linear;
+      }
+
+      .card:not(.card:has(.rating-unavailable)):active {
+        transform: scale(1) translateZ(0);
+      }
+
+      .card:not(.card:has(.rating-unavailable)) {
+          cursor: pointer;
+      }
+
+     #weekly-activities {
+        width: 85vw;
+        height: 22.375rem;
+        flex-shrink: 0;
+        border-radius: 2rem;
+        border: 1.4px solid rgba(255, 255, 255, 0.30);
+        background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.80) 0%, rgba(149, 164, 191, 0.56) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #weekly-activity-content {
+            display: inline-flex;
+            height: 15.8125rem;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-shrink: 0;
+            margin-top: 2.69rem;
+            width: 80vw;
+
+            h2 {
+                color: $text;
+                font-size: 2.25rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            #activity-forecast {
+                display: flex;
+                width: 91.75rem;
+                height: 10.8125rem;
+                justify-content: space-between;
+                align-items: center;
+                flex-shrink: 0;
+
+                .week-item {
+                    display: flex;
+                    width: 18.0625rem;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-shrink: 0;
+                }
+
             }
         }
+
      }
+
  }
