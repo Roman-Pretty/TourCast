@@ -41,8 +41,21 @@ function Card({activity, ideal}) {
 
 const Dashboard = ({weatherData, weekData}) => {
   
-  let ideals = ["ideal","ideal","ideal","ideal","ideal","ideal","ideal"];
-  
+  let ideals = ["Ideal","Ideal","Ideal","Ideal","Ideal","Ideal","Ideal"];
+
+  if (weatherData != null) {
+
+    let temperature = Math.round(weatherData.main.temp)
+    let feelsLike = weatherData.main.feels_like
+    let weather = weatherData.weather[0].main // Clear, Rain, Clouds
+    let visibility = weatherData.visibility // Maximum 10km is shown as 10000
+    let windSpeed = weatherData.wind.speed // shown in meter/sec
+
+    // Running
+    
+    
+  }
+
     return (
       <div class="content">
         <div id="activities">
