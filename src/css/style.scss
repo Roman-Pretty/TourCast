@@ -6,6 +6,9 @@ $text:  #EDF2F4;
 $background: #2B2D42;
 $primary: #EF233C;
 $foreground: #8D99AE;
+$info: #49D3FF;
+$warning: #FFBF00;
+$danger: #A61C1C;
 
 /*************
  * All Pages *
@@ -304,6 +307,95 @@ header {
     }
 }
 
-/*************
- * Wind Page *
- *************/
+/*****************
+ * Activity Page *
+ *****************/
+
+ #activities {
+
+    #card-array {
+        display: flex;
+        flex-direction: row;
+        width: 100.8125rem;
+        height: 15rem;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .unavailable {
+        opacity: 0.5;
+    }
+
+     .card {
+        border-radius: 1.9375rem;
+        background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(88, 103, 129, 0.80) 0%, rgba(141, 153, 174, 0.48) 100%);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 10vw;
+        height: 15rem;
+
+        .card-content {
+            margin-top: 2.44rem;
+            display: flex;
+            width: 9.1875rem;
+            height: 10.1875rem;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+
+            h3 {
+                color: $text;
+                text-align: center;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            .rating {
+                display: flex;
+                height: 2.75rem;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                flex-shrink: 0;
+
+                .bar {
+                    width: 8.375rem;
+                    height: 0.625rem;
+                    flex-shrink: 0;
+                    border-radius: 0.5rem;
+                }
+
+                p {
+                    text-align: center;
+                    font-family: Shanti;
+                    font-size: 1.25rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }             
+            }
+            .rating-ideal {
+                .bar {background: $info;}
+                p {color: $info;}
+            }
+            .rating-poor {
+                .bar {background: $warning;}
+                p {color: $warning;}
+            }
+            .rating-danger {
+                .bar {background: $danger;}
+                p {color: $danger;}
+            }
+            .rating-unavailable {
+                .bar {background: $text;}
+                p {color: $text;}
+            }
+        }
+     }
+ }
