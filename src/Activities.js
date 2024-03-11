@@ -40,6 +40,7 @@ function Card({activity, ideal}) {
 }
 
 const Dashboard = ({weatherData, weekData}) => {
+  // Test
     return (
       <div class="content">
         <div id="activities">
