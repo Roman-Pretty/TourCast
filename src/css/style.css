@@ -569,5 +569,75 @@ header #space {
   border-radius: 2rem;
   border: 1.4px solid rgba(255, 255, 255, 0.3);
   background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.56) 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#activities #weekly-activities #weekly-activity-content {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 15.8125rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-top: 2.69rem;
+  width: 80vw;
+}
+
+#activities #weekly-activities #weekly-activity-content h2 {
+  color: #EDF2F4;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 91.75rem;
+  height: 10.8125rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 18.0625rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 /*# sourceMappingURL=style.css.map */

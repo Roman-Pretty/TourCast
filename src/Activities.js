@@ -10,43 +10,12 @@ import { ReactComponent as Hiking } from './img/activity_icons/hiking.svg';
 import { ReactComponent as Surfing } from './img/activity_icons/surfing.svg';
 import { ReactComponent as Telescope } from './img/activity_icons/telescope.svg';
 
-function Card({activity, ideal}) {
-
-  let className = "rating rating-" + ideal.toLowerCase();
-  let cardType = ideal == "Unavailable" ? "card unavailable" : "card";
-
-  let icon = null;
-  if(activity == "Running") {icon = <Run />} else
-  if(activity == "Camping") {icon = <Camping />} else
-  if(activity == "Skiing") {icon = <Skiing />} else
-  if(activity == "Fishing") {icon = <Fishing />} else
-  if(activity == "Hiking") {icon = <Hiking />} else
-  if(activity == "Watersport") {icon = <Surfing />} else
-  if(activity == "Stargazing") {icon = <Telescope />}
-
-  return (
-    <div class={cardType}>
-      <div class="card-content">
-        {icon}
-        <h3>{activity}</h3>
-        <div class={className}>
-          <hr class="bar"></hr>
-          <p>{ideal}</p>
-        </div>
-      </div>
-    </div>
-  );
-
-}
-
-const Dashboard = ({weatherData, weekData}) => {
-  
+function getIdeals(weatherData) {
   let ideals = ["Ideal","Ideal","Ideal","Ideal","Ideal","Ideal","Ideal"];
 
   if (weatherData != null) {
 
     let temperature = Math.round(weatherData.main.temp)
-    let feelsLike = weatherData.main.feels_like
     let weather = weatherData.weather[0].main // Clear, Rain, Clouds
     let visibility = weatherData.visibility // Maximum 10km is shown as 10000
     let windSpeed = weatherData.wind.speed // shown in meter/sec
@@ -108,6 +77,51 @@ const Dashboard = ({weatherData, weekData}) => {
       ideals[6] = "Unavailable"
     }
   }
+  return ideals;
+}
+
+function Card({activity, ideal}) {
+
+  let className = "rating rating-" + ideal.toLowerCase();
+  let cardType = ideal == "Unavailable" ? "card unavailable" : "card";
+
+  let icon = null;
+  if(activity == "Running") {icon = <Run />} else
+  if(activity == "Camping") {icon = <Camping />} else
+  if(activity == "Skiing") {icon = <Skiing />} else
+  if(activity == "Fishing") {icon = <Fishing />} else
+  if(activity == "Hiking") {icon = <Hiking />} else
+  if(activity == "Watersport") {icon = <Surfing />} else
+  if(activity == "Stargazing") {icon = <Telescope />}
+
+  return (
+    <div class={cardType}>
+      <div class="card-content">
+        {icon}
+        <h3>{activity}</h3>
+        <div class={className}>
+          <hr class="bar"></hr>
+          <p>{ideal}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+}
+
+function WeekItem() {
+
+  return (
+    <div class="week-item">
+      
+    </div>
+  );
+
+}
+
+const Dashboard = ({weatherData, weekData}) => {
+  
+  let ideals = getIdeals(weatherData);
 
     return (
       <div class="content">
@@ -122,7 +136,18 @@ const Dashboard = ({weatherData, weekData}) => {
             <Card activity={"Skiing"} ideal={ideals[5]}/>
             <Card activity={"Stargazing"} ideal={ideals[6]}/>
           </div>
-          <div id="weekly-activities"></div>
+          <div id="weekly-activities">
+            <div id="weekly-activity-content">
+              <h2>Weekly Overview</h2>
+              <div id="activity-forecast">
+                <WeekItem />
+                <WeekItem />
+                <WeekItem />
+                <WeekItem />
+                <WeekItem />
+              </div>
+            </div>
+          </div>
           <Background />
         </div>    
       </div>  
