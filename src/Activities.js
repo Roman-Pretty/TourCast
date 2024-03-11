@@ -108,10 +108,11 @@ const Dashboard = ({weatherData, weekData}) => {
       ideals[6] = "Unavailable"
     }
   }
-  
+
     return (
       <div class="content">
         <div id="activities">
+          <h1>Activities</h1>
           <div id="card-array">
             <Card activity={"Running"} ideal={ideals[0]}/>
             <Card activity={"Camping"} ideal={ideals[1]}/>
@@ -121,6 +122,7 @@ const Dashboard = ({weatherData, weekData}) => {
             <Card activity={"Skiing"} ideal={ideals[5]}/>
             <Card activity={"Stargazing"} ideal={ideals[6]}/>
           </div>
+          <div id="weekly-activities"></div>
           <Background />
         </div>    
       </div>  
