@@ -7,8 +7,8 @@ $background: #2B2D42;
 $primary: #EF233C;
 $foreground: #8D99AE;
 $info: #49D3FF;
-$warning: #FFBF00;
-$danger: #A61C1C;
+$poor: #FFBF00;
+$warning: #A61C1C;
 
 /*************
  * All Pages *
@@ -400,12 +400,12 @@ header {
                 p {color: $info;}
             }
             .rating-poor {
+                .bar {background: $poor;}
+                p {color: $poor;}
+            }
+            .rating-warning {
                 .bar {background: $warning;}
                 p {color: $warning;}
-            }
-            .rating-danger {
-                .bar {background: $danger;}
-                p {color: $danger;}
             }
         }      
      }

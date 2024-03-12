@@ -26,7 +26,7 @@ function getIdeals(weatherData) {
       ideals[0] = "Poor"
     }
     if (visibility < 2000 || temperature < -5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 8.3|| humidity < 10 || humidity > 90) {
-      ideals[0] = "Danger"
+      ideals[0] = "Warning"
     }
 
     // Camping
@@ -34,7 +34,7 @@ function getIdeals(weatherData) {
       ideals[1] = "Poor"
     }
     if (visibility < 2000 || temperature < -5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 8.3|| humidity < 20 || humidity > 80) {
-      ideals[1] = "Danger"
+      ideals[1] = "Warning"
     }
     
     // Fishing
@@ -42,7 +42,7 @@ function getIdeals(weatherData) {
       ideals[2] = "Poor"
     }
     if (visibility < 2000 || temperature < -5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 8.3|| humidity < 15 || humidity > 80) {
-      ideals[2] = "Danger"
+      ideals[2] = "Warning"
     }
 
     // Hiking
@@ -50,7 +50,7 @@ function getIdeals(weatherData) {
       ideals[3] = "Poor"
     }
     if (visibility < 2000 || temperature < -5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 8.3) {
-      ideals[3] = "Danger"
+      ideals[3] = "Warning"
     }
 
     // Watersports
@@ -58,7 +58,7 @@ function getIdeals(weatherData) {
       ideals[4] = "Poor"
     }
     if (visibility < 2000 || temperature < 5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 15.56) {
-      ideals[4] = "Danger"
+      ideals[4] = "Warning"
     }
 
      // Skiing
@@ -66,7 +66,7 @@ function getIdeals(weatherData) {
       ideals[5] = "Poor"
     }
     if (visibility < 20 || temperature < -10 || weather == "Thunder" || weather == "Storm" || windSpeed > 13) {
-      ideals[5] = "Danger"
+      ideals[5] = "Warning"
     }
     if (temperature >= 0) {
       ideals[5] = "Unavailable"
