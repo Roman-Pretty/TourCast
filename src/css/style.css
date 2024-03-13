@@ -223,6 +223,22 @@ header #space {
   /* Weekly Forecast */
 }
 
+@media (max-width: 1600px) {
+  #dashboard {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: baseline;
+        -ms-flex-pack: baseline;
+            justify-content: baseline;
+    gap: 4rem;
+  }
+}
+
 #dashboard #today-weather {
   display: inherit;
   width: 29.9375rem;
@@ -302,9 +318,27 @@ header #space {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: 0.75;
   color: #8D99AE;
   margin-top: 2rem;
+}
+
+@media (max-width: 1600px) {
+  #dashboard #forecast {
+    border-radius: 2rem;
+    border: 1.4px solid rgba(255, 255, 255, 0.3);
+    background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 801px) {
+  #dashboard #forecast {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0rem;
+  }
 }
 
 #dashboard .week-item {
@@ -517,7 +551,7 @@ header #space {
 }
 
 #activities .card .card-content .rating .bar {
-  width: 8.375rem;
+  width: 7.6vw;
   height: 0.625rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
