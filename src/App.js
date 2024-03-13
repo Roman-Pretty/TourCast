@@ -25,6 +25,8 @@ const App = () => {
       setPageComponent( <Dashboard />);
     } else if (page == 'activities-page') {
       setPageComponent(<Activities />);
+    } else {
+      setPageComponent(null);
     }
   },[width, page]);
 
