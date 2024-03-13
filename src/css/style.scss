@@ -474,7 +474,7 @@ header {
                     display: flex !important;
                     width: 18.0625rem;
                     flex-direction: row;
-                    justify-content: flex-start;
+                    justify-content: space-between;
                     gap: 2rem;
                     align-items: center;
                     flex-shrink: 0;
@@ -489,7 +489,8 @@ header {
                         .week-weather {
                             display: flex;
                             height: 7.6875rem;
-                            justify-content: center;
+                            justify-content: baseline;
+                            gap: 1rem;
                             flex-direction: row;
                             align-items: center;
                             flex-shrink: 0;
@@ -529,6 +530,11 @@ header {
                             width: 14.6875rem;
                             justify-content: flex-start;
                             align-items: center;
+
+                            .icon-holder {
+                                height: 32px;
+                            }
+
                         }
                     }                   
                 }
