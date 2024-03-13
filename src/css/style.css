@@ -14,6 +14,7 @@ body {
   width: 100vw;
   background: #2B2D42;
   background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
+  overflow: hidden;
 }
 
 .content {
@@ -53,6 +54,12 @@ header {
   color: #EDF2F4;
   font-size: 1.6rem;
   z-index: -1;
+}
+
+@media (max-width: 1200px) {
+  header #space {
+    display: none;
+  }
 }
 
 header nav {
@@ -229,9 +236,9 @@ header #space {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: baseline;
         -ms-flex-pack: baseline;
             justify-content: baseline;
@@ -318,6 +325,7 @@ header #space {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0.75;
   color: #8D99AE;
   margin-top: 2rem;
 }
@@ -328,16 +336,12 @@ header #space {
     border: 1.4px solid rgba(255, 255, 255, 0.3);
     background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
     padding: 2rem;
-  }
-}
-
-@media (max-width: 801px) {
-  #dashboard #forecast {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 0rem;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    opacity: 1;
   }
 }
 
@@ -476,11 +480,22 @@ header #space {
           align-items: flex-start;
 }
 
+@media (max-width: 1600px) {
+  #activities #card-array {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+}
+
 #activities .unavailable {
   opacity: 0.5;
 }
 
 #activities .card {
+  min-width: 150px;
   border-radius: 1.9375rem;
   background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(88, 103, 129, 0.8) 0%, rgba(141, 153, 174, 0.48) 100%);
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

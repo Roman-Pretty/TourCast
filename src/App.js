@@ -1,5 +1,5 @@
 import './css/App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from './Header';
 import Dashboard from './Dashboard';
 import Activities from './Activities';
@@ -13,19 +13,22 @@ export const PageContext = React.createContext();
 const App = () => {
 
   const [page, setPage] = useState('dashboard-page');
+  const [pageComponent, setPageComponent] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
   const [weekData, setWeekData] = useState(null);
   const { height, width } = useWindowDimensions();
+  
+  useEffect(() => {
+    if (width <= 768) {
+      setPageComponent(<Mobile />);
+    } else if (page == 'dashboard-page') {
+      setPageComponent( <Dashboard />);
+    } else if (page == 'activities-page') {
+      setPageComponent(<Activities />);
+    }
+  },[width, page]);
 
-  let pageComponent = null;
-
-  if (width <= 768) {
-    pageComponent = <Mobile />;
-  } else if (page == 'dashboard-page') {
-    pageComponent = <Dashboard />;
-  } else if (page == 'activities-page') {
-    pageComponent = <Activities />;
-  }
+  
 
   return (
     <PageContext.Provider value={[page, setPage]}>

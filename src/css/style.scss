@@ -25,6 +25,7 @@ body {
     width: 100vw;
     background: $background;
     background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
+    overflow: hidden;
 }
 
 .content {
@@ -47,6 +48,12 @@ header {
     color: $text;
     font-size: 1.6rem;
     z-index: -1;
+
+    @media (max-width:1200px) {        
+        #space {
+            display: none;
+        }
+    }
 
     nav {
         z-index: 0;
@@ -186,7 +193,7 @@ header {
 
     @media (max-width:1600px)   {
         flex-direction: column;
-        align-items: baseline;
+        align-items: center;
         justify-content: baseline;
         gap: 4rem;
     }
@@ -241,28 +248,24 @@ header {
     }
 
     /* Weekly Forecast */
-
     #forecast {
         display: flex;
         width: 64.1875rem;
         justify-content: space-between;
         align-items: center;
-        // opacity: 0.75;
+        opacity: 0.75;
         color: $foreground;
         margin-top: 2rem;       
-
+        
         @media (max-width:1600px)   {
             border-radius: 2rem;
             border: 1.4px solid rgba(255, 255, 255, 0.30);
             background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
             padding: 2rem;
+            flex-wrap: wrap;
+            max-width: fit-content;
+            opacity: 1;
         }
-
-        @media (max-width:801px)   {
-            flex-direction: column;
-            padding: 0rem;
-        }
-
     }
 
     .week-item {
@@ -361,6 +364,14 @@ header {
         height: 15rem;
         justify-content: space-between;
         align-items: flex-start;
+
+        @media (max-width:1600px) {
+            justify-content: flex-start;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+        
+        
     }
 
     .unavailable {
@@ -368,6 +379,7 @@ header {
     }
 
      .card {
+        min-width: 150px;
         border-radius: 1.9375rem;
         background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(88, 103, 129, 0.80) 0%, rgba(141, 153, 174, 0.48) 100%);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

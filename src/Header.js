@@ -44,7 +44,6 @@ function Title() {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
       );
       setWeatherData(response.data);
-      console.log(response.data); //You can see all the weather data in console log
     } catch (error) {
       console.error(error);
     }
