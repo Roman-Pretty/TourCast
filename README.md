@@ -5,13 +5,13 @@ TourCast is a weather app that provides real-time weather information using the 
 ## Features
 
 - Get current weather conditions for any location
-- View detailed weather forecast for the next 7 days
+- View detailed weather forecast for the next 5 days
 - Search for specific locations to get weather information
 - See optimal Activities for the given location
 
 ## Technologies Used
 
-- HTML, CSS, JavaScript, React
+- HTML, CSS, SCSS, JavaScript, React
 - OpenWeatherAPI
 
 ## Installation
@@ -38,6 +38,7 @@ To get started with TourCast, follow these steps:
 
 1. Open the app in VSCode and run the _npm start_ command.
 2. Enter a location in the search bar to get the current weather conditions.
+3. Navigate to the _activities_ page to view what activities are optimal for current and future weather conditions.
 
 ## Contributing
 
