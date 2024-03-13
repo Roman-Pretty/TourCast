@@ -119,25 +119,34 @@ header {
         
     }
 
-    select {
-        color: $text;
-        font-family: Shanti;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal; 
-        max-width: 20rem;
-        appearance: none;
-        text-align-last: center;
-        cursor: pointer;
-    }
+    fieldset {
+        width: 26.5rem;
+        flex-shrink: 0;
+        border-radius: 62.4375rem;
+        background: #444;
+        padding-left: 0.3rem;
+        display: flex;
+        box-sizing: border-box;
 
-    option, optgroup {
-        color: black;
-        font-size: 1rem;
-
-        * {
-            margin: 1rem;
+        input {
+            color: $text;
+            font-size: 1.25rem;
+            padding: 0.6rem;
+            width: 100%;
+            height: 100%;
         }
+
+        button {
+            display: flex;
+            align-items: center;
+            margin-right: 0.3rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
     }
 
     #title {
