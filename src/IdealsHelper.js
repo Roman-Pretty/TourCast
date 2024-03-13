@@ -34,10 +34,10 @@ function getIdeals(temperature, weather, visibility, windSpeed, humidity) {
     }
   
     // Watersports
-    if (visibility < 5000 || temperature < 18 || temperature > 25 || weather == "Rain" || windSpeed > 10) {
+    if (visibility < 5000 || temperature < 18 || temperature > 25 ||  windSpeed > 5.14444) {
       ideals[4] = "Poor"
     }
-    if (visibility < 2000 || temperature < 5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 15.56) {
+    if (visibility < 2000 || temperature < 5 || temperature > 35 || weather == "Thunder" || weather == "Storm" || windSpeed > 12) {
       ideals[4] = "Warning"
     }
   
@@ -60,3 +60,5 @@ function getIdeals(temperature, weather, visibility, windSpeed, humidity) {
     return ideals;
   }
   export {getIdeals};
+
+  //https://openweathermap.org/weather-conditions
