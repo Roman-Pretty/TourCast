@@ -1,5 +1,5 @@
 import './css/App.css';
-import React from 'react';
+import React, {createElement, useContext} from 'react';
 import { ReactComponent as Cloudy } from './img/weather/cloudy.svg';
 import { ReactComponent as Rainy } from './img/weather/rainy.svg';
 import { ReactComponent as Sunny } from './img/weather/sunny.svg';
@@ -9,8 +9,11 @@ import { ReactComponent as RainyWeek } from './img/weather/week/Rainy.svg';
 import { ReactComponent as SunWeek } from './img/weather/week/Sun.svg';
 import { ReactComponent as StormyWeek } from './img/weather/week/Stormy.svg';
 import { ReactComponent as CloudyWeek } from './img/weather/week/Cloudy.svg';
+import { WeekContext, DayContext } from './App';
 
-function TodayWeather({weatherData}) {
+function TodayWeather() {
+
+  const [weatherData, setWeatherData] = useContext(DayContext);
 
   let temperature = 0
   let feelsLike = 0
@@ -74,11 +77,13 @@ function WeekItem({day, weather, temp}) {
   );
 }
 
-function Forecast({weekData}) {
+function Forecast() {
+
+  const [weekData, setWeekData] = useContext(WeekContext);
 
   // Get the next 4 days
   var now = new Date();
-  var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat', 'Sun'];
   var day = [days[ now.getDay()+1], days[ now.getDay()+2], days[ now.getDay()+3], days[ now.getDay()+4]];
 
   // Get the weather and temperature for the next 4 days
@@ -101,12 +106,12 @@ function Forecast({weekData}) {
   );
 }
 
-const Dashboard = ({weatherData, weekData}) => {
+const Dashboard = () => {
     return (
       <div class="content">
         <div id="dashboard">
-          <TodayWeather weatherData={weatherData}/>
-          <Forecast weekData={weekData}/>
+          <TodayWeather />
+          <Forecast />
           <Background />
         </div>    
       </div>  

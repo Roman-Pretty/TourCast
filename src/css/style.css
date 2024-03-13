@@ -5,7 +5,6 @@
  *************/
 body {
   color: #EDF2F4;
-  text-align: center;
   font-family: Shanti;
   font-size: 1rem;
   font-style: normal;
@@ -159,6 +158,7 @@ header fieldset input {
   padding: 0.6rem;
   width: 100%;
   height: 100%;
+  text-transform: capitalize;
 }
 
 header fieldset button {
@@ -198,7 +198,7 @@ header #space {
  * Dashboard *
  *************/
 /* Background */
-#dashboard > svg, #activities > svg {
+#dashboard > svg, #activities > svg, .raining > svg {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -614,6 +614,7 @@ header #space {
       flex-shrink: 0;
   margin-top: 2.69rem;
   width: 80vw;
+  overflow-x: auto;
 }
 
 #activities #weekly-activities #weekly-activity-content h2 {
@@ -625,9 +626,9 @@ header #space {
 }
 
 #activities #weekly-activities #weekly-activity-content #activity-forecast {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   width: 91.75rem;
   height: 10.8125rem;
   -webkit-box-pack: justify;
@@ -641,17 +642,95 @@ header #space {
 }
 
 #activities #weekly-activities #weekly-activity-content #activity-forecast .week-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   width: 18.0625rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .v-div {
+  width: 0.125rem;
+  height: 8.875rem;
+  background: #EDF2F4;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 7.6875rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-weather .week-weather-text {
+  display: inherit;
+  height: 7.6875rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-weather .week-weather-text h1 {
+  color: #EDF2F4;
+  font-family: Shanti;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-weather .week-weather-text p {
+  color: #EDF2F4;
+  font-family: Shanti;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 14.6875rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */

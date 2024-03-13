@@ -16,7 +16,6 @@ $warning: #A61C1C;
 
 body {
     color: $text;
-    text-align: center;
     font-family: Shanti;
     font-size: 1rem;
     font-style: normal;
@@ -134,6 +133,7 @@ header {
             padding: 0.6rem;
             width: 100%;
             height: 100%;
+            text-transform: capitalize;
         }
 
         button {
@@ -167,15 +167,13 @@ header {
 
 /* Background */
 
- #dashboard > svg, #activities > svg {
+ #dashboard > svg, #activities > svg, .raining > svg {
     position: absolute;
     right: 0;
     bottom: 0;
     scale: 100%;
     z-index: -10;
 }
-
-
 
 #dashboard {
 
@@ -462,8 +460,10 @@ header {
                 line-height: normal;
             }
 
+            overflow-x: auto;
+
             #activity-forecast {
-                display: flex;
+                display: flex !important;
                 width: 91.75rem;
                 height: 10.8125rem;
                 justify-content: space-between;
@@ -471,16 +471,68 @@ header {
                 flex-shrink: 0;
 
                 .week-item {
-                    display: flex;
+                    display: flex !important;
                     width: 18.0625rem;
-                    justify-content: space-between;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 2rem;
                     align-items: center;
                     flex-shrink: 0;
-                }
 
+                    .v-div {
+                        width: 0.125rem;
+                        height: 8.875rem;
+                        background: $text;
+                    }
+
+                    .week-item-content {
+                        .week-weather {
+                            display: flex;
+                            height: 7.6875rem;
+                            justify-content: center;
+                            flex-direction: row;
+                            align-items: center;
+                            flex-shrink: 0;
+    
+                            .week-weather-text {
+                                display: inherit;
+                                height: 7.6875rem;
+                                justify-content: center;
+                                align-items: flex-start;
+                                flex-direction: column;
+                                flex-shrink: 0;
+    
+                                h1 {
+                                    color: $text;
+                                    font-family: Shanti;
+                                    font-size: 2rem;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                }
+    
+                                p {
+                                    color: $text;
+                                    font-family: Shanti;
+                                    font-size: 1rem;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                }
+    
+                            }
+    
+                        }
+
+                        .week-activity-icons {
+                            display: flex;
+                            width: 14.6875rem;
+                            justify-content: flex-start;
+                            align-items: center;
+                        }
+                    }                   
+                }
             }
         }
-
      }
-
  }
