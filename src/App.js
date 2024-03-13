@@ -1,10 +1,10 @@
 import './css/App.css';
 import React, {useEffect, useState} from 'react';
-import Header from './Header';
-import Dashboard from './Dashboard';
-import Activities from './Activities';
-import useWindowDimensions from './WindowDimensions';
-import Mobile from './Mobile';
+import Header from './components/Header';
+import Dashboard from './components/Dashboard';
+import Activities from './components/Activities';
+import useWindowDimensions from './components/WindowDimensions';
+import Mobile from './components/Mobile';
 
 export const DayContext = React.createContext();
 export const WeekContext = React.createContext();

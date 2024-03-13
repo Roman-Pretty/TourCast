@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { ReactComponent as MenuIcon } from './img/menu_icons/menu.svg';
-import { ReactComponent as RunIcon } from './img/menu_icons/directions_run.svg';
-import { ReactComponent as PollutionIcon } from './img/menu_icons/Pollution 1.svg';
-import { ReactComponent as WindIcon } from './img/menu_icons/Wind 1.svg';
-import { ReactComponent as CloudIcon } from './img/menu_icons/cloud.svg';
-import { DayContext, WeekContext, PageContext } from './App';
+import { ReactComponent as MenuIcon } from '../img/menu_icons/menu.svg';
+import { ReactComponent as RunIcon } from '../img/menu_icons/directions_run.svg';
+import { ReactComponent as PollutionIcon } from '../img/menu_icons/Pollution 1.svg';
+import { ReactComponent as WindIcon } from '../img/menu_icons/Wind 1.svg';
+import { ReactComponent as CloudIcon } from '../img/menu_icons/cloud.svg';
+import { DayContext, WeekContext, PageContext } from '../App';
 import axios from 'axios';
 
 function Tooltip({ text }) {

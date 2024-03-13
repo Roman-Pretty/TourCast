@@ -1,6 +1,6 @@
-import './css/App.css';
+import '../css/App.css';
 import React, { useState } from 'react';
-import { ReactComponent as Background } from './img/bg-mobile.svg';
+import { ReactComponent as Background } from '../img/bg-mobile.svg';
 
 const Mobile = () => {
   return (

@@ -1,33 +1,33 @@
-import './css/App.css';
+import '../css/App.css';
 import React, { useContext } from 'react';
 
-import { ReactComponent as Background } from './img/bg-blur.svg';
+import { ReactComponent as Background } from '../img/bg-blur.svg';
 import { getIdeals } from './IdealsHelper';
 
 // Card Import
-import { ReactComponent as Run } from './img/activity_icons/directions_run.svg';
-import { ReactComponent as Camping } from './img/activity_icons/camping.svg';
-import { ReactComponent as Skiing } from './img/activity_icons/downhill_skiing.svg';
-import { ReactComponent as Fishing } from './img/activity_icons/fishing.svg';
-import { ReactComponent as Hiking } from './img/activity_icons/hiking.svg';
-import { ReactComponent as Surfing } from './img/activity_icons/surfing.svg';
-import { ReactComponent as Telescope } from './img/activity_icons/telescope.svg';
+import { ReactComponent as Run } from '../img/activity_icons/directions_run.svg';
+import { ReactComponent as Camping } from '../img/activity_icons/camping.svg';
+import { ReactComponent as Skiing } from '../img/activity_icons/downhill_skiing.svg';
+import { ReactComponent as Fishing } from '../img/activity_icons/fishing.svg';
+import { ReactComponent as Hiking } from '../img/activity_icons/hiking.svg';
+import { ReactComponent as Surfing } from '../img/activity_icons/surfing.svg';
+import { ReactComponent as Telescope } from '../img/activity_icons/telescope.svg';
 
 // Week Imports
-import { ReactComponent as WeekRun } from './img/activity_icons/week_icons/directions_run.svg';
-import { ReactComponent as WeekCamping } from './img/activity_icons/week_icons/camping.svg';
-import { ReactComponent as WeekSkiing } from './img/activity_icons/week_icons/downhill_skiing.svg';
-import { ReactComponent as WeekFishing } from './img/activity_icons/week_icons/fishing.svg';
-import { ReactComponent as WeekHiking } from './img/activity_icons/week_icons/hiking.svg';
-import { ReactComponent as WeekSurfing } from './img/activity_icons/week_icons/surfing.svg';
-import { ReactComponent as WeekStar } from './img/activity_icons/week_icons/star.svg';
+import { ReactComponent as WeekRun } from '../img/activity_icons/week_icons/directions_run.svg';
+import { ReactComponent as WeekCamping } from '../img/activity_icons/week_icons/camping.svg';
+import { ReactComponent as WeekSkiing } from '../img/activity_icons/week_icons/downhill_skiing.svg';
+import { ReactComponent as WeekFishing } from '../img/activity_icons/week_icons/fishing.svg';
+import { ReactComponent as WeekHiking } from '../img/activity_icons/week_icons/hiking.svg';
+import { ReactComponent as WeekSurfing } from '../img/activity_icons/week_icons/surfing.svg';
+import { ReactComponent as WeekStar } from '../img/activity_icons/week_icons/star.svg';
 
 // Weather Imports
-import { ReactComponent as RainyWeek } from './img/weather/week/Rainy.svg';
-import { ReactComponent as SunWeek } from './img/weather/week/Sun.svg';
-import { ReactComponent as StormyWeek } from './img/weather/week/Stormy.svg';
-import { ReactComponent as CloudyWeek } from './img/weather/week/Cloudy.svg';
-import { DayContext, WeekContext } from './App';
+import { ReactComponent as RainyWeek } from '../img/weather/week/Rainy.svg';
+import { ReactComponent as SunWeek } from '../img/weather/week/Sun.svg';
+import { ReactComponent as StormyWeek } from '../img/weather/week/Stormy.svg';
+import { ReactComponent as CloudyWeek } from '../img/weather/week/Cloudy.svg';
+import { DayContext, WeekContext } from '../App';
 
 function Card({ activity, ideal }) {
 
