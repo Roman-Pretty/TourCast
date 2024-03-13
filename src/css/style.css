@@ -179,6 +179,47 @@ header fieldset button {
   cursor: pointer;
 }
 
+header fieldset .loading {
+  -webkit-animation: load-animation 2s infinite;
+          animation: load-animation 2s infinite;
+}
+
+@-webkit-keyframes load-animation {
+  20% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes load-animation {
+  20% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
 header fieldset button:hover {
   opacity: 0.8;
 }

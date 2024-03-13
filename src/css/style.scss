@@ -150,6 +150,25 @@ header {
             cursor: pointer;
         }
 
+        .loading {
+            animation: load-animation 2s infinite;
+        }
+
+        @keyframes load-animation {
+            20% {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         button:hover {
             opacity: 0.8;
         }
