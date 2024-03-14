@@ -4,15 +4,6 @@ import React, { useContext } from 'react';
 import { ReactComponent as Background } from '../img/bg-blur.svg';
 import { getIdeals } from './IdealsHelper';
 
-// Card Import
-import { ReactComponent as Run } from '../img/activity_icons/directions_run.svg';
-import { ReactComponent as Camping } from '../img/activity_icons/camping.svg';
-import { ReactComponent as Skiing } from '../img/activity_icons/downhill_skiing.svg';
-import { ReactComponent as Fishing } from '../img/activity_icons/fishing.svg';
-import { ReactComponent as Hiking } from '../img/activity_icons/hiking.svg';
-import { ReactComponent as Surfing } from '../img/activity_icons/surfing.svg';
-import { ReactComponent as Telescope } from '../img/activity_icons/telescope.svg';
-
 // Week Imports
 import { ReactComponent as WeekRun } from '../img/activity_icons/week_icons/directions_run.svg';
 import { ReactComponent as WeekCamping } from '../img/activity_icons/week_icons/camping.svg';
@@ -28,34 +19,7 @@ import { ReactComponent as SunWeek } from '../img/weather/week/Sun.svg';
 import { ReactComponent as StormyWeek } from '../img/weather/week/Stormy.svg';
 import { ReactComponent as CloudyWeek } from '../img/weather/week/Cloudy.svg';
 import { DayContext, WeekContext } from '../App';
-
-function Card({ activity, ideal }) {
-
-  let className = "rating rating-" + ideal.toLowerCase();
-  let cardType = ideal == "Unavailable" ? "card unavailable" : "card";
-
-  let icon = null;
-  if (activity == "Running") { icon = <Run />; } else
-    if (activity == "Camping") { icon = <Camping />; } else
-      if (activity == "Skiing") { icon = <Skiing />; } else
-        if (activity == "Fishing") { icon = <Fishing />; } else
-          if (activity == "Hiking") { icon = <Hiking />; } else
-            if (activity == "Watersport") { icon = <Surfing />; } else
-              if (activity == "Stargazing") { icon = <Telescope />; }
-
-  return (
-    <div class={cardType}>
-      <div class="card-content">
-        {icon}
-        <h3>{activity}</h3>
-        <div class={className}>
-          <hr class="bar"></hr>
-          <p>{ideal}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { ActivityCard } from './ActivityCard';
 
 function WeekItem({ day, weather, temp, levels }) {
 
@@ -169,13 +133,14 @@ const Activities = () => {
       <div id="activities">
         <h1>Activities</h1>
         <div id="card-array">
-          <Card activity={"Running"} ideal={ideals[0]} />
-          <Card activity={"Camping"} ideal={ideals[1]} />
-          <Card activity={"Fishing"} ideal={ideals[2]} />
-          <Card activity={"Hiking"} ideal={ideals[3]} />
-          <Card activity={"Watersport"} ideal={ideals[4]} />
-          <Card activity={"Skiing"} ideal={ideals[5]} />
-          <Card activity={"Stargazing"} ideal={ideals[6]} />
+          
+          <ActivityCard activity="Running" ideal={ideals[0]} />
+          <ActivityCard activity="Camping" ideal={ideals[1]} />
+          <ActivityCard activity="Fishing" ideal={ideals[2]} />
+          <ActivityCard activity="Hiking" ideal={ideals[3]} />
+          <ActivityCard activity="Watersport" ideal={ideals[4]} />
+          <ActivityCard activity="Skiing" ideal={ideals[5]} />
+          <ActivityCard activity="Stargazing" ideal={ideals[6]} />
         </div>
         <GetWeek />
         <Background />

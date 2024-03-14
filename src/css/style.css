@@ -1,5 +1,6 @@
 @import url(c:\Users\ec22761\Documents\TourCast\src\css\reset.css);
 @import url("https://fonts.googleapis.com/css2?family=Shanti&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 /*************
  * All Pages *
  *************/
@@ -15,6 +16,98 @@ body {
   background: #2B2D42;
   background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
   overflow: hidden;
+}
+
+fieldset {
+  width: 26.5rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 62.4375rem;
+  background: #444;
+  padding-left: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+fieldset input {
+  color: #EDF2F4;
+  font-size: 1.25rem;
+  padding: 0.6rem;
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
+}
+
+fieldset button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+
+fieldset .loading {
+  -webkit-animation: load-animation 2s infinite;
+          animation: load-animation 2s infinite;
+}
+
+@-webkit-keyframes load-animation {
+  20% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes load-animation {
+  20% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+fieldset button:hover {
+  opacity: 0.8;
+}
+
+*::-webkit-scrollbar {
+  height: 0.2rem;
+  width: 0rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8D99AE;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #2B2D42;
 }
 
 .content {
@@ -145,85 +238,6 @@ header nav .extreme-weather-page {
 
 header nav .pollution-page {
   left: 15.4rem !important;
-}
-
-header fieldset {
-  width: 26.5rem;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  border-radius: 62.4375rem;
-  background: #444;
-  padding-left: 0.3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-header fieldset input {
-  color: #EDF2F4;
-  font-size: 1.25rem;
-  padding: 0.6rem;
-  width: 100%;
-  height: 100%;
-  text-transform: capitalize;
-}
-
-header fieldset button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-right: 0.3rem;
-  cursor: pointer;
-}
-
-header fieldset .loading {
-  -webkit-animation: load-animation 2s infinite;
-          animation: load-animation 2s infinite;
-}
-
-@-webkit-keyframes load-animation {
-  20% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-    opacity: 0.5;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes load-animation {
-  20% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-    opacity: 0.5;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-header fieldset button:hover {
-  opacity: 0.8;
 }
 
 header #title {
@@ -848,34 +862,6 @@ header #space {
   visibility: visible;
 }
 
-/**************
- * Mobile CSS *
- **************/
-#mobile svg {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100vw;
-}
-
-#mobile footer {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  border-radius: 32px 32px 0 0;
-  border: 1.4px solid rgba(255, 255, 255, 0.3);
-  background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.6) 100%);
-  height: 115px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-#mobile footer svg {
-  margin-bottom: 90px;
-  stroke-width: 6px;
-  stroke: #07FFFF;
-}
-
 /*******************
  * Extreme Weather *
  *******************/
@@ -969,5 +955,319 @@ header #space {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+/**************
+ * Mobile CSS *
+ **************/
+#mobile {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2rem;
+}
+
+#mobile > svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  z-index: -10;
+}
+
+#mobile footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  border-radius: 32px 32px 0 0;
+  border: 1.4px solid rgba(255, 255, 255, 0.3);
+  background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.6) 100%);
+  height: 115px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#mobile footer svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  margin-bottom: 90px;
+  stroke-width: 6px;
+  stroke: #07FFFF;
+  z-index: -10;
+}
+
+#mobile .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+  padding-top: 1rem;
+}
+
+#mobile .content .content-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mobile .content .content-text h1 {
+  color: #EDF2F4;
+  text-align: center;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#mobile .content .content-text h2 {
+  color: #EDF2F4;
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 7.625rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -1.14375rem;
+}
+
+#mobile .content svg {
+  position: relative;
+  width: 11.4375rem;
+  height: 7.5625rem;
+}
+
+#mobile .content .content-subtext {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mobile .content .content-subtext h3 {
+  color: #8D99AE;
+  text-align: center;
+  /* Paragraph */
+  font-family: Shanti;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#mobile .content .content-subtext p {
+  color: #EDF2F4;
+  text-align: center;
+  /* Paragraph */
+  font-family: Shanti;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#mobile .content .card-array {
+  width: 100vw;
+  height: 11rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border: 1.4px solid rgba(200, 176, 176, 0.3);
+  background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.4) 0%, rgba(149, 164, 191, 0.3) 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+#mobile .content .card-array .card-content {
+  width: 6.1875rem;
+  height: 7.6875rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 1.9375rem;
+  background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(141, 153, 174, 0.8) 0%, rgba(141, 153, 174, 0.48) 100%);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  flex-shrink: 0;
+  padding: 1rem;
+}
+
+#mobile .content .card-array .card-content svg {
+  width: 4rem;
+}
+
+#mobile .content .card-array .card-content .rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.75rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#mobile .content .card-array .card-content .rating .bar {
+  width: 10vw;
+  height: 0.3rem;
+  margin-top: 0.6rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 0.5rem;
+}
+
+#mobile .content .card-array .card-content .rating p {
+  text-align: center;
+  font-family: Shanti;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#mobile .content .card-array .card-content .rating-ideal .bar {
+  background: #49D3FF;
+}
+
+#mobile .content .card-array .card-content .rating-ideal p {
+  color: #49D3FF;
+}
+
+#mobile .content .card-array .card-content .rating-poor .bar {
+  background: #FFBF00;
+}
+
+#mobile .content .card-array .card-content .rating-poor p {
+  color: #FFBF00;
+}
+
+#mobile .content .card-array .card-content .rating-warning .bar {
+  background: #A61C1C;
+}
+
+#mobile .content .card-array .card-content .rating-warning p {
+  color: #A61C1C;
+}
+
+#mobile fieldset {
+  width: 80vw;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 62.4375rem;
+  background: #444;
+  padding-left: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#mobile fieldset input {
+  color: #EDF2F4;
+  font-size: 1.25rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
+}
+
+#mobile fieldset button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  width: 4rem;
+}
+
+#mobile fieldset .loading {
+  -webkit-animation: load-animation 2s infinite;
+          animation: load-animation 2s infinite;
+}
+
+@keyframes load-animation {
+  20% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#mobile fieldset button:hover {
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */
