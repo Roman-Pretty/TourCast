@@ -12,6 +12,8 @@ import { ReactComponent as StormIcon } from '../img/extreme_weather_icons/storm.
 import { ReactComponent as SnowstormIcon } from '../img/extreme_weather_icons/snowstorm.svg';
 import { ReactComponent as DustIcon } from '../img/extreme_weather_icons/dust.svg';
 import { ReactComponent as AshIcon } from '../img/extreme_weather_icons/ash.svg';
+import { ReactComponent as ExtremeColdIcon } from '../img/extreme_weather_icons/cold.svg';
+import { ReactComponent as SmokeIcon } from '../img/extreme_weather_icons/smoke.svg';
 
 function ExtremeCard() {
   const [weatherData, setWeatherData] = useContext(DayContext);
@@ -25,7 +27,7 @@ function ExtremeCard() {
     extreme_weather = getExtremeWeatherIdeals(temperature, weather_id);
   }
 
-  extreme_weather = "Ash"
+  extreme_weather = "Heatwave"
 
   let icon = null;
   if (extreme_weather == "Heatwave") { icon = <HeatwaveIcon />; } else
@@ -33,9 +35,9 @@ function ExtremeCard() {
       if (extreme_weather == "Thunderstorm") { icon = <StormIcon />; } else
         if (extreme_weather == "Snowstorm") { icon = <SnowstormIcon />; } else
           if (extreme_weather == "Dust") { icon = <DustIcon />; } else
-            if (extreme_weather == "Ash") { icon = <AshIcon />; } //else 
-              // if (extreme_weather == "Extreme Cold") { icon = <ExtremeColdIcon />; } else 
-              //   if (extreme_weather == "Smoke") { icon = <SmokeIcon />;}
+            if (extreme_weather == "Ash") { icon = <AshIcon />; } else 
+              if (extreme_weather == "Extreme Cold") { icon = <ExtremeColdIcon />; } else 
+                if (extreme_weather == "Smoke") { icon = <SmokeIcon />;}
 
   if (extreme_weather == "None") {
     return (
@@ -69,18 +71,6 @@ function ExtremeDetails(extreme_weather) {
       <h3>Details</h3>
     </div>
   )
-}
-
-function Extremes() {
-  return (
-    <div id="extreme">
-        <div id="extreme-text">
-            <section id="title">
-                {/* < ExtremeCard /> */}
-            </section>
-        </div>
-    </div>
-  );
 }
 
 const ExtremeWeather = () => {
