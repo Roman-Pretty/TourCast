@@ -6,6 +6,7 @@ import Activities from './components/Activities';
 import useWindowDimensions from './components/WindowDimensions';
 import Mobile from './components/Mobile';
 import ExtremeWeather from './components/ExtremeWeather';
+import WeatherP from './WeatherP';
 
 export const DayContext = React.createContext();
 export const WeekContext = React.createContext();
@@ -30,6 +31,8 @@ const App = () => {
       setPageComponent(<Activities />);
     } else if (page == 'extreme-weather-page') {
       setPageComponent(<ExtremeWeather />);
+    } else if (page == 'weather-page') {
+      setPageComponent(<WeatherP />);
     } else {
       setPageComponent(null);
     }
