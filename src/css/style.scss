@@ -9,6 +9,7 @@ $foreground: #8D99AE;
 $info: #49D3FF;
 $poor: #FFBF00;
 $warning: #A61C1C;
+$extreme: #d5181d;
 
 /*************
  * All Pages *
@@ -115,7 +116,7 @@ header {
             left: 8.2rem !important;
         }
 
-        .wind-page {
+        .extreme-weather-page {
             left: 11.7rem !important;
         }
 
@@ -194,7 +195,7 @@ header {
 
 /* Background */
 
- #dashboard > svg, #activities > svg, .raining > svg {
+ #dashboard > svg, #activities > svg, .raining > svg, #extreme-weather > svg {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -623,3 +624,66 @@ header {
 
      }
  }
+
+/*******************
+ * Extreme Weather *
+ *******************/
+#extreme-weather {
+    margin-top: 6vh;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 3.1875rem;
+
+    h1{
+        color: $text;
+        font-family: Shanti;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    #extreme-content{
+        display: inline-flex;
+        flex-direction: row;
+    }
+
+    #extreme-details {
+        display: inline-flex;
+    }
+
+    .extreme-card{
+        border-radius: 1.9375rem;
+        border: 1px solid $extreme;
+        background-color: $extreme;
+        // background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(88, 103, 129, 0.80) 0%, rgba(141, 153, 174, 0.48) 100%);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 15vw;
+        height: 18rem;
+
+        .extreme-card-content {
+            margin-top: 2.44rem;
+            display: flex;
+            width: 15rem;
+            height: 15rem;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+
+            h3 {
+                color: black;
+                text-align:end;
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }   
+}
