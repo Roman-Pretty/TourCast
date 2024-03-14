@@ -831,6 +831,23 @@ header #space {
   height: 32px;
 }
 
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons .tooltip {
+  position: absolute;
+  font-size: 1rem;
+  bottom: 4rem;
+  background-color: #202020;
+  color: #EDF2F4;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 0.7rem;
+  padding: 0.4rem;
+  visibility: hidden;
+}
+
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons:hover .tooltip {
+  visibility: visible;
+}
+
 /**************
  * Mobile CSS *
  **************/

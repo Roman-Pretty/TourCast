@@ -91,6 +91,9 @@ function WeekItem({ day, weather, temp, levels }) {
           {levels[5] == 'Ideal' ? <WeekSkiing /> : null}
           {levels[6] == 'Ideal' ? <WeekStar /> : null}
           <div className='icon-holder'></div>
+          {(levels[0] == 'Ideal' || levels[1] == 'Ideal' || levels[2] == 'Ideal' ||
+          levels[3] == 'Ideal' || levels[4] == 'Ideal' || levels[5] == 'Ideal' ||
+          levels[6] == 'Ideal') ? <div className='tooltip'><p>Ideal Activities</p></div> : null}
         </div>
       </div>
     </div>

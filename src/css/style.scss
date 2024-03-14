@@ -89,7 +89,6 @@ header {
             }   
             li:hover .tooltip {
                 visibility: visible;
-
             }
         }
 
@@ -586,7 +585,21 @@ header {
                             .icon-holder {
                                 height: 32px;
                             }
-
+                            .tooltip {
+                                position: absolute;
+                                font-size: 1rem;
+                                bottom: 4rem;
+                                background-color: $header;
+                                color: $text;
+                                text-align: center;
+                                padding: 5px 0;
+                                border-radius: 0.7rem;
+                                padding: 0.4rem;
+                                visibility: hidden;                   
+                            }
+                        }
+                        .week-activity-icons:hover .tooltip {
+                            visibility: visible;
                         }
                     }                   
                 }
