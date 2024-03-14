@@ -391,7 +391,7 @@ header #space {
   #dashboard #forecast {
     border-radius: 2rem;
     border: 1.4px solid rgba(255, 255, 255, 0.3);
-    background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
+    background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.56) 100%);
     padding: 2rem;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
