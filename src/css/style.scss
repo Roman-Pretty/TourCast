@@ -635,6 +635,18 @@ header {
     align-items: flex-start;
     gap: 3.1875rem;
 
+    .extreme-nothing {
+        h3 {
+            color: $text;
+            text-align: center;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            padding-left: 5vw;
+        }
+    }
+
     #extreme-content {
         display:inline-flex;
         flex-direction: row;

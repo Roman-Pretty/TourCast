@@ -24,8 +24,8 @@ function ExtremeCard() {
   let extreme_weather_help = null;
   if (weatherData != null) {
     temperature = Math.round(weatherData.main.temp);
-    temperature = -15;
-    // weather_id = weatherData.weather[0].id;
+    // temperature = -15;
+    weather_id = weatherData.weather[0].id;
     // weather_id = 762;
 
     extreme_array = getExtremeWeatherIdeals(temperature, weather_id);
@@ -48,7 +48,7 @@ function ExtremeCard() {
   if (extreme_weather == "None") {
     return (
       <div class="extreme-nothing">
-        <h3>No extreme weather near by detected.{weather_id}</h3>
+        <h3>No extreme weather nearby detected.</h3>
       </div>
     )
   }
@@ -67,30 +67,12 @@ function ExtremeCard() {
   );
 }
 
-function ExtremeDetails(extreme_weather_help) {
-  let description = extreme_weather_help
-  if (extreme_weather_help == "None") {
-    return (
-      <div class="extreme-details">
-      </div>
-    )
-  }
-  return (
-    <div class="extreme-details">
-      <h3>{description}</h3>
-    </div>
-  )
-}
-
 const ExtremeWeather = () => {
 
   return (
       <div id="extreme-weather">
         <h1>Extreme Weather</h1>
-        {/* <div id="extreme-content"> */}
           <ExtremeCard />
-          {/* <ExtremeDetails /> */}
-        {/* </div> */}
         <Background />
       </div>
   );
