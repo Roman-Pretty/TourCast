@@ -4,7 +4,7 @@ import { ReactComponent as RunIcon } from '../img/menu_icons/directions_run.svg'
 import { ReactComponent as PollutionIcon } from '../img/menu_icons/Pollution 1.svg';
 import { ReactComponent as WindIcon } from '../img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from '../img/menu_icons/cloud.svg';
-import { DayContext, WeekContext, PageContext } from '../App';
+import { DayContext, WeekContext, PageContext, CityContext } from '../App';
 import axios from 'axios';
 
 function Tooltip({ text }) {
@@ -35,7 +35,7 @@ function Nav() {
 
 function Title() {
 
-  const [city, setCity] = useState('London');
+  const [city, setCity] = useContext(CityContext);
   const [weatherData, setWeatherData] = useContext(DayContext);
   const [weekData, setWeekData] = useContext(WeekContext);
   const [isLoading, setIsLoading] = useState('loading');

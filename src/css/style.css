@@ -1,5 +1,6 @@
 @import './reset.css';
 @import url("https://fonts.googleapis.com/css2?family=Shanti&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 /*************
  * All Pages *
  *************/
@@ -15,6 +16,63 @@ body {
   background: #2B2D42;
   background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
   overflow: hidden;
+}
+
+fieldset {
+  width: 26.5rem;
+  flex-shrink: 0;
+  border-radius: 62.4375rem;
+  background: #444;
+  padding-left: 0.3rem;
+  display: flex;
+  box-sizing: border-box;
+}
+fieldset input {
+  color: #EDF2F4;
+  font-size: 1.25rem;
+  padding: 0.6rem;
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
+}
+fieldset button {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+fieldset .loading {
+  animation: load-animation 2s infinite;
+}
+@keyframes load-animation {
+  20% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+fieldset button:hover {
+  opacity: 0.8;
+}
+
+*::-webkit-scrollbar {
+  height: 0.2rem;
+  width: 0rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8D99AE;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #2B2D42;
 }
 
 .content {
@@ -237,7 +295,7 @@ header #space {
   #dashboard #forecast {
     border-radius: 2rem;
     border: 1.4px solid rgba(255, 255, 255, 0.3);
-    background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
+    background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.56) 100%);
     padding: 2rem;
     flex-wrap: wrap;
     max-width: -moz-fit-content;
@@ -512,7 +570,6 @@ header #space {
 #activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons .icon-holder {
   height: 32px;
 }
-
 /**************
  * Mobile CSS *
  **************/
@@ -536,6 +593,22 @@ header #space {
   margin-bottom: 90px;
   stroke-width: 6px;
   stroke: #07FFFF;
+=======
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons .tooltip {
+  position: absolute;
+  font-size: 1rem;
+  bottom: 4rem;
+  background-color: #202020;
+  color: #EDF2F4;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 0.7rem;
+  padding: 0.4rem;
+  visibility: hidden;
+}
+#activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons:hover .tooltip {
+  visibility: visible;
+
 }
 
 /*******************
@@ -543,12 +616,16 @@ header #space {
  *******************/
 #extreme-weather {
   margin-top: 6vh;
+
   display: inline-flex;
+
   flex-direction: column;
   align-items: flex-start;
   gap: 3.1875rem;
 }
+
 #extreme-weather .extreme-nothing h3 {
+
   color: #EDF2F4;
   text-align: center;
   font-size: 2rem;
@@ -568,6 +645,12 @@ header #space {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  }
+  
+
+#extreme-weather #extreme-details {
+  display: inline-flex;
+
 }
 #extreme-weather .extreme-card {
   border-radius: 1.9375rem;
@@ -599,6 +682,7 @@ header #space {
   font-weight: 400;
   line-height: normal;
 }
+
 #extreme-weather #extreme-details {
   border-radius: 1.9375rem;
   border: 1px solid #d5181d;
@@ -621,4 +705,218 @@ header #space {
   opacity: 100%;
   font-size: 1.8rem;
   font-weight: 1000;
-}/*# sourceMappingURL=style.css.map */
+
+
+/**************
+ * Mobile CSS *
+ **************/
+#mobile {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+#mobile > svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  z-index: -10;
+}
+#mobile footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  border-radius: 32px 32px 0 0;
+  border: 1.4px solid rgba(255, 255, 255, 0.3);
+  background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.6) 100%);
+  height: 115px;
+  flex-shrink: 0;
+}
+#mobile footer svg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  margin-bottom: 90px;
+  stroke-width: 6px;
+  stroke: #07FFFF;
+  z-index: -10;
+}
+#mobile .content {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-top: 1rem;
+}
+#mobile .content .content-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#mobile .content .content-text h1 {
+  color: #EDF2F4;
+  text-align: center;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#mobile .content .content-text h2 {
+  color: #EDF2F4;
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 7.625rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -1.14375rem;
+}
+#mobile .content svg {
+  position: relative;
+  width: 11.4375rem;
+  height: 7.5625rem;
+}
+#mobile .content .content-subtext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#mobile .content .content-subtext h3 {
+  color: #8D99AE;
+  text-align: center;
+  /* Paragraph */
+  font-family: Shanti;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#mobile .content .content-subtext p {
+  color: #EDF2F4;
+  text-align: center;
+  /* Paragraph */
+  font-family: Shanti;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#mobile .content .card-array {
+  width: 100vw;
+  height: 11rem;
+  flex-shrink: 0;
+  border: 1.4px solid rgba(200, 176, 176, 0.3);
+  background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.4) 0%, rgba(149, 164, 191, 0.3) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+#mobile .content .card-array .card-content {
+  width: 6.1875rem;
+  height: 7.6875rem;
+  flex-shrink: 0;
+  border-radius: 1.9375rem;
+  background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(141, 153, 174, 0.8) 0%, rgba(141, 153, 174, 0.48) 100%);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 1rem;
+}
+#mobile .content .card-array .card-content svg {
+  width: 4rem;
+}
+#mobile .content .card-array .card-content .rating {
+  display: flex;
+  height: 2.75rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+#mobile .content .card-array .card-content .rating .bar {
+  width: 10vw;
+  height: 0.3rem;
+  margin-top: 0.6rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+}
+#mobile .content .card-array .card-content .rating p {
+  text-align: center;
+  font-family: Shanti;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#mobile .content .card-array .card-content .rating-ideal .bar {
+  background: #49D3FF;
+}
+#mobile .content .card-array .card-content .rating-ideal p {
+  color: #49D3FF;
+}
+#mobile .content .card-array .card-content .rating-poor .bar {
+  background: #FFBF00;
+}
+#mobile .content .card-array .card-content .rating-poor p {
+  color: #FFBF00;
+}
+#mobile .content .card-array .card-content .rating-warning .bar {
+  background: #A61C1C;
+}
+#mobile .content .card-array .card-content .rating-warning p {
+  color: #A61C1C;
+}
+#mobile fieldset {
+  width: 80vw;
+  flex-shrink: 0;
+  border-radius: 62.4375rem;
+  background: #444;
+  padding-left: 0.3rem;
+  display: flex;
+  box-sizing: border-box;
+}
+#mobile fieldset input {
+  color: #EDF2F4;
+  font-size: 1.25rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
+}
+#mobile fieldset button {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  width: 4rem;
+}
+#mobile fieldset .loading {
+  animation: load-animation 2s infinite;
+}
+@keyframes load-animation {
+  20% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+#mobile fieldset button:hover {
+  opacity: 0.8;
+}

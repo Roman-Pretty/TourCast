@@ -1,5 +1,6 @@
 @import './reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Shanti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 $header: #202020;
 $text:  #EDF2F4;
@@ -27,6 +28,73 @@ body {
     background: $background;
     background: radial-gradient(87.82% 71.17% at 61.43% 100%, #3F4266 0%, #2B2D42 100%);
     overflow: hidden;
+}
+
+// Form
+fieldset {
+    width: 26.5rem;
+    flex-shrink: 0;
+    border-radius: 62.4375rem;
+    background: #444;
+    padding-left: 0.3rem;
+    display: flex;
+    box-sizing: border-box;
+
+    input {
+        color: $text;
+        font-size: 1.25rem;
+        padding: 0.6rem;
+        width: 100%;
+        height: 100%;
+        text-transform: capitalize;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        margin-right: 0.3rem;
+        cursor: pointer;
+    }
+
+    .loading {
+        animation: load-animation 2s infinite;
+    }
+
+    @keyframes load-animation {
+        20% {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.1);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+}
+
+ //Whole Scrollbar
+ *::-webkit-scrollbar {
+    height: 0.2rem;
+    width: 0rem;
+}
+
+// Inside Scrollbar
+*::-webkit-scrollbar-thumb {
+    background-color: $foreground;
+}
+
+// Scrollbar Background
+*::-webkit-scrollbar-track {
+    background-color: $background;
 }
 
 .content {
@@ -89,7 +157,6 @@ header {
             }   
             li:hover .tooltip {
                 visibility: visible;
-
             }
         }
 
@@ -125,57 +192,7 @@ header {
         }
 
         
-    }
-
-    fieldset {
-        width: 26.5rem;
-        flex-shrink: 0;
-        border-radius: 62.4375rem;
-        background: #444;
-        padding-left: 0.3rem;
-        display: flex;
-        box-sizing: border-box;
-
-        input {
-            color: $text;
-            font-size: 1.25rem;
-            padding: 0.6rem;
-            width: 100%;
-            height: 100%;
-            text-transform: capitalize;
-        }
-
-        button {
-            display: flex;
-            align-items: center;
-            margin-right: 0.3rem;
-            cursor: pointer;
-        }
-
-        .loading {
-            animation: load-animation 2s infinite;
-        }
-
-        @keyframes load-animation {
-            20% {
-                transform: scale(0.9);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-    }
+    }    
 
     #title {
         display: flex;
@@ -281,7 +298,7 @@ header {
         @media (max-width:1600px)   {
             border-radius: 2rem;
             border: 1.4px solid rgba(255, 255, 255, 0.30);
-            background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
+            background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.80) 0%, rgba(149, 164, 191, 0.56) 100%);
             padding: 2rem;
             flex-wrap: wrap;
             max-width: fit-content;
@@ -362,7 +379,6 @@ header {
  *****************/
 
  #activities {
-
     margin-top: 6vh;
     display: inline-flex;
     flex-direction: column;
@@ -390,9 +406,7 @@ header {
             justify-content: flex-start;
             gap: 1rem;
             overflow-x: auto;
-        }
-        
-        
+        }      
     }
 
     .unavailable {
@@ -586,42 +600,26 @@ header {
                             .icon-holder {
                                 height: 32px;
                             }
-
+                            .tooltip {
+                                position: absolute;
+                                font-size: 1rem;
+                                bottom: 4rem;
+                                background-color: $header;
+                                color: $text;
+                                text-align: center;
+                                padding: 5px 0;
+                                border-radius: 0.7rem;
+                                padding: 0.4rem;
+                                visibility: hidden;                   
+                            }
+                        }
+                        .week-activity-icons:hover .tooltip {
+                            visibility: visible;
                         }
                     }                   
                 }
             }
         }
-     }
- }
-
-/**************
- * Mobile CSS *
- **************/
-
- #mobile {
-    svg {
-         position: fixed;
-         bottom: 0;
-         right: 0;
-         width: 100vw;         
-     }
-     footer {
-        position: fixed;
-        bottom: 0;
-        width: 100vw;    
-        border-radius: 32px 32px 0 0;
-        border: 1.4px solid rgba(255, 255, 255, 0.30);
-        background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.80) 0%, rgba(149, 164, 191, 0.60) 100%);
-        height: 115px;
-        flex-shrink: 0;
-
-        svg {
-            margin-bottom: 90px;
-            stroke-width: 6px;
-            stroke: #07FFFF;
-        }
-
      }
  }
 
@@ -722,3 +720,239 @@ header {
     }
 }
 
+=======
+    }   
+}
+/**************
+ * Mobile CSS *
+ **************/
+
+ #mobile {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+   > svg {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100vw;  
+        z-index: -10;       
+    }
+    
+    footer {
+       position: fixed;
+       bottom: 0;
+       width: 100vw;    
+       border-radius: 32px 32px 0 0;
+       border: 1.4px solid rgba(255, 255, 255, 0.30);
+       background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.80) 0%, rgba(149, 164, 191, 0.60) 100%);
+       height: 115px;
+       flex-shrink: 0;
+
+       svg {
+           position: fixed;
+           bottom: 0;
+           right: 0;
+           width: 100vw; 
+           margin-bottom: 90px;
+           stroke-width: 6px;
+           stroke: #07FFFF;
+           z-index: -10;
+       }
+    }
+
+    .content {
+       display: flex;
+       width: 100vw;
+       flex-direction: column;
+       align-items: center;
+       gap: 24px;
+       padding-top: 1rem;
+
+       .content-text {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+
+           h1 {
+               color: $text;
+               text-align: center;
+               font-size: 3rem;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+           }
+
+           h2 {
+               color: $text;
+               text-align: center;
+               font-family: Ubuntu;
+               font-size: 7.625rem;
+               font-style: normal;
+               font-weight: 300;
+               line-height: normal;
+               letter-spacing: -1.14375rem;
+           }
+       }
+
+       svg {
+           position: relative;
+           width: 11.4375rem;
+           height: 7.5625rem;
+       }
+
+       .content-subtext {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+
+           h3 {
+               color: $foreground;
+               text-align: center;
+               /* Paragraph */
+               font-family: Shanti;
+               font-size: 1.5rem;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+           }
+
+           p {
+               color: $text;
+               text-align: center;
+               /* Paragraph */
+               font-family: Shanti;
+               font-size: 1.5rem;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+           }
+       }
+
+       .card-array {
+           width: 100vw;
+           height: 11rem;
+           flex-shrink: 0;
+           border: 1.4px solid rgba(200, 176, 176, 0.30);
+           background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.40) 0%, rgba(149, 164, 191, 0.30) 100%);
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           gap: 1rem;
+           overflow-x: auto;
+           padding: 1rem;
+           
+           .card-content {
+               width: 6.1875rem;
+               height: 7.6875rem;
+               flex-shrink: 0;
+               border-radius: 1.9375rem;
+               background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(141, 153, 174, 0.80) 0%, rgba(141, 153, 174, 0.48) 100%);
+               display: inline-flex;
+               flex-direction: column;
+               justify-content: space-between;
+               align-items: center;
+               flex-shrink: 0;
+               padding: 1rem;
+
+               svg {
+                   width: 4rem;
+               }
+
+               .rating {
+               display: flex;
+               height: 2.75rem;
+               flex-direction: column;
+               justify-content: space-between;
+               align-items: center;
+               flex-shrink: 0;
+
+               .bar {
+                   width: 10vw;
+                   height: 0.3rem;
+                   margin-top: 0.6rem;
+                   flex-shrink: 0;
+                   border-radius: 0.5rem;
+               }
+
+               p {
+                   text-align: center;
+                   font-family: Shanti;
+                   font-size: 1.25rem;
+                   font-style: normal;
+                   font-weight: 400;
+                   line-height: normal;
+               }             
+           }
+
+               .rating-ideal {
+                   .bar {background: $info;}
+                   p {color: $info;}
+               }
+               .rating-poor {
+                   .bar {background: $poor;}
+                   p {color: $poor;}
+               }
+               .rating-warning {
+                   .bar {background: $warning;}
+                   p {color: $warning;}
+               }           
+           }
+       }
+    }
+
+    fieldset {
+       width: 80vw;
+       flex-shrink: 0;
+       border-radius: 62.4375rem;
+       background: #444;
+       padding-left: 0.3rem;  
+       display: flex;
+       box-sizing: border-box;
+   
+       input {
+           color: $text;
+           font-size: 1.25rem;
+           padding: 1rem;
+           width: 100%;
+           height: 100%;
+           text-transform: capitalize;
+       }
+   
+       button {
+           display: flex;
+           align-items: center;
+           margin-right: 0.3rem;
+           cursor: pointer;
+           width: 4rem;
+       }
+   
+       .loading {
+           animation: load-animation 2s infinite;
+       }
+   
+       @keyframes load-animation {
+           20% {
+               transform: scale(0.9);
+               opacity: 1;
+           }
+           50% {
+               transform: scale(1.1);
+               opacity: 0.5;
+           }
+           100% {
+               transform: scale(1);
+               opacity: 1;
+           }
+       }
+   
+       button:hover {
+           opacity: 0.8;
+       }
+   
+   }
+}
