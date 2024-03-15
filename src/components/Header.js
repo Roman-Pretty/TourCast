@@ -5,6 +5,7 @@ import { ReactComponent as PollutionIcon } from '../img/menu_icons/Pollution 1.s
 import { ReactComponent as WindIcon } from '../img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from '../img/menu_icons/cloud.svg';
 import { DayContext, WeekContext, PageContext, CityContext } from '../App';
+import { getExtremeWeatherIdeals } from './ExtremeWeatherHelper';
 import axios from 'axios';
 
 function Tooltip({ text }) {
@@ -18,6 +19,18 @@ function Tooltip({ text }) {
 function Nav() {
 
   const [page, setPage] = useContext(PageContext);
+  const [weatherData, setWeatherData] = useContext(DayContext);
+  const [isDisabled, setIsDisabled] = useState("none");
+
+  useEffect(() => {
+    if (weatherData != null) {
+      let isDisabled = getExtremeWeatherIdeals(
+        Math.round(weatherData.main.temp),
+        weatherData.weather[0].id)[0] == "None" ? "disabled" : "none";
+      setIsDisabled(isDisabled);
+    }
+  }, [weatherData]);
+
 
   return (
     <nav>
@@ -26,7 +39,7 @@ function Nav() {
         <li><a onClick={() => setPage("dashboard-page")}><MenuIcon /></a><Tooltip text="Dashboard" /></li>
         <li><a onClick={() => setPage("activities-page")}><RunIcon /></a><Tooltip text="Activities" /></li>
         <li><a onClick={() => setPage("weather-page")}><CloudIcon /></a><Tooltip text="Weather" /></li>
-        <li><a onClick={() => setPage("extreme-weather-page")}><WindIcon /></a><Tooltip text="Extreme Weather" /></li>
+        <li><a className={isDisabled} onClick={() => setPage("extreme-weather-page")}><WindIcon /></a><Tooltip text="Extreme Weather" /></li>
         <li><a onClick={() => setPage("pollution-page")}><PollutionIcon /></a><Tooltip text="Pollution" /></li>
       </ul>
     </nav>

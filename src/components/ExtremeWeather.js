@@ -16,24 +16,23 @@ import { ReactComponent as ExtremeColdIcon } from '../img/extreme_weather_icons/
 import { ReactComponent as SmokeIcon } from '../img/extreme_weather_icons/smoke.svg';
 
 function ExtremeCard() {
+
   const [weatherData, setWeatherData] = useContext(DayContext);
+  
   let weather_id = 0;
   let temperature = 0;
   let extreme_array = [null, null];
   let extreme_weather = null;
   let extreme_weather_help = null;
+
   if (weatherData != null) {
     temperature = Math.round(weatherData.main.temp);
-    // temperature = -15;
     weather_id = weatherData.weather[0].id;
-    // weather_id = 762;
 
     extreme_array = getExtremeWeatherIdeals(temperature, weather_id);
     extreme_weather = extreme_array[0];
     extreme_weather_help = extreme_array[1];
   }
-
-  // extreme_weather = "Heatwave"
 
   let icon = null;
   if (extreme_weather == "Heatwave") { icon = <HeatwaveIcon />; } else
@@ -48,7 +47,7 @@ function ExtremeCard() {
   if (extreme_weather == "None") {
     return (
       <div class="extreme-nothing">
-        <h3>No extreme weather nearby detected.</h3>
+        <h3>No extreme weather detected nearby.</h3>
       </div>
     )
   }
@@ -73,7 +72,7 @@ const ExtremeWeather = () => {
       <div id="extreme-weather">
         <h1>Extreme Weather</h1>
           <ExtremeCard />
-        <Background />
+          <Background />
       </div>
   );
 };
