@@ -39,8 +39,8 @@ function Nav() {
         <li><a onClick={() => setPage("dashboard-page")}><MenuIcon /></a><Tooltip text="Dashboard" /></li>
         <li><a onClick={() => setPage("activities-page")}><RunIcon /></a><Tooltip text="Activities" /></li>
         <li><a onClick={() => setPage("weather-page")}><CloudIcon /></a><Tooltip text="Weather" /></li>
-        <li><a className={isDisabled} onClick={() => setPage("extreme-weather-page")}><WindIcon /></a><Tooltip text="Extreme Weather" /></li>
         <li><a onClick={() => setPage("pollution-page")}><PollutionIcon /></a><Tooltip text="Pollution" /></li>
+        <li><a className={isDisabled} onClick={() => setPage("extreme-weather-page")}><WindIcon /></a><Tooltip text="Extreme Weather" /></li>
       </ul>
     </nav>
   );

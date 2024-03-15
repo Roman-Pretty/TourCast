@@ -163,10 +163,10 @@ header nav .activities-page {
 header nav .weather-page {
   left: 8.2rem !important;
 }
-header nav .extreme-weather-page {
-  left: 11.7rem !important;
-}
 header nav .pollution-page {
+  left: 11.8rem !important;
+}
+header nav .extreme-weather-page {
   left: 15.4rem !important;
 }
 header #title {
