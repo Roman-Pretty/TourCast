@@ -19,15 +19,21 @@ function ExtremeCard() {
   const [weatherData, setWeatherData] = useContext(DayContext);
   let weather_id = 0;
   let temperature = 0;
-  let extreme_weather = 0;
+  let extreme_array = [null, null];
+  let extreme_weather = null;
+  let extreme_weather_help = null;
   if (weatherData != null) {
     temperature = Math.round(weatherData.main.temp);
-    weather_id = weatherData.weather[0].id;
+    temperature = -15;
+    // weather_id = weatherData.weather[0].id;
+    // weather_id = 762;
 
-    extreme_weather = getExtremeWeatherIdeals(temperature, weather_id);
+    extreme_array = getExtremeWeatherIdeals(temperature, weather_id);
+    extreme_weather = extreme_array[0];
+    extreme_weather_help = extreme_array[1];
   }
 
-  extreme_weather = "Heatwave"
+  // extreme_weather = "Heatwave"
 
   let icon = null;
   if (extreme_weather == "Heatwave") { icon = <HeatwaveIcon />; } else
@@ -42,25 +48,28 @@ function ExtremeCard() {
   if (extreme_weather == "None") {
     return (
       <div class="extreme-nothing">
-        <h3>No extreme weather near by detected.</h3>
+        <h3>No extreme weather near by detected.{weather_id}</h3>
       </div>
     )
   }
   return (
     <div id="extreme-content">
-    <div class="extreme-card">
-      <div class="extreme-card-content">
-        {icon}
-        <h3>{extreme_weather}</h3>
+      <div class="extreme-card">
+        <div class="extreme-card-content">
+          {icon}
+          <h3>{extreme_weather}</h3>
+        </div>
       </div>
+      <div id="extreme-details">
+        <h3>{extreme_weather_help}</h3>
       </div>
-      <ExtremeDetails extreme_weather={extreme_weather}/>
     </div>
   );
 }
 
-function ExtremeDetails(extreme_weather) {
-  if (extreme_weather == "None") {
+function ExtremeDetails(extreme_weather_help) {
+  let description = extreme_weather_help
+  if (extreme_weather_help == "None") {
     return (
       <div class="extreme-details">
       </div>
@@ -68,7 +77,7 @@ function ExtremeDetails(extreme_weather) {
   }
   return (
     <div class="extreme-details">
-      <h3>Details</h3>
+      <h3>{description}</h3>
     </div>
   )
 }
