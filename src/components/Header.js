@@ -87,7 +87,6 @@ function Title() {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <select id="dropdown" value={city} onChange={handleSubmit}></select> */}
       <fieldset>
         <input type="text" value={city} onChange={handleInputChange}></input>
         <button type='submit' className={isLoading}>

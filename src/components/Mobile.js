@@ -9,6 +9,7 @@ import { ReactComponent as Stormy } from '../img/weather/stormy.svg';
 
 import { ActivityCard } from './ActivityCard';
 import { getIdeals } from './IdealsHelper';
+import { getExtremeWeatherIdeals } from './ExtremeWeatherHelper';
 
 import { DayContext, WeekContext, CityContext } from '../App';
 import axios from 'axios';
@@ -36,6 +37,37 @@ function CardArray() {
       <ActivityCard activity="Stargazing" ideal={ideals[6]} />
     </div>
   );
+}
+
+function ExtremeWeather() {
+
+  const [weatherData, setWeatherData] = useContext(DayContext);
+  const [isDisabled, setIsDisabled] = useState("none");
+  const [extremeWeather, setExtremeWeather] = useState("None");
+
+  useEffect(() => {
+    if (weatherData != null) {
+      
+      // Set the extreme weather
+      setExtremeWeather(getExtremeWeatherIdeals(
+        Math.round(weatherData.main.temp),
+        weatherData.weather[0].id)[0]);
+
+      // If it exists, make the notification enabled
+      let isDisabled = getExtremeWeatherIdeals(
+        Math.round(weatherData.main.temp),
+        weatherData.weather[0].id)[0] == "None" ? "disabled" : "enabled";
+
+      setIsDisabled(isDisabled);
+    }
+  }, [weatherData]);
+
+  return (
+    <div id='extreme-weather' className={isDisabled}>
+      <h1>{extremeWeather + "!"}</h1>
+    </div>
+  );
+
 }
 
 const Mobile = () => {
@@ -105,7 +137,6 @@ const Mobile = () => {
   return (
     <div id='mobile'>
        <form onSubmit={handleSubmit}>
-      {/* <select id="dropdown" value={city} onChange={handleSubmit}></select> */}
       <fieldset>
         <input type="text" value={city} onChange={handleInputChange}></input>
         <button type='submit' className={isLoading}>
@@ -119,6 +150,7 @@ const Mobile = () => {
       </fieldset>
     </form>
       <div className='content'>
+        <ExtremeWeather />
         <div className='content-text'>
           <h1>Today</h1>
           <h2>{temperature}°</h2>

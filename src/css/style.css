@@ -685,6 +685,24 @@ header #space {
   gap: 24px;
   padding-top: 1rem;
 }
+#mobile .content .disabled {
+  display: none;
+}
+#mobile .content .enabled {
+  display: flex;
+  padding: 0rem;
+}
+#mobile .content .enabled h1 {
+  color: #EDF2F4;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  background-color: #d5181d;
+  width: 100vw;
+  text-align: center;
+}
 #mobile .content .content-text {
   display: flex;
   flex-direction: column;
