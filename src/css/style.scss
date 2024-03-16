@@ -817,6 +817,7 @@ header {
             width: 100vw;
             gap: 2rem;
             padding-top: 4.25rem;
+            overflow-x: auto;
 
             h2 {
                 align-self: flex-start;
@@ -852,13 +853,10 @@ header {
                     
 
                     .day {
-
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        gap: 1rem;
-
-                        
+                        gap: 2rem;                        
                     }
 
                     .activities {
@@ -870,6 +868,7 @@ header {
                     p {
                         display: flex;
                         align-items: center;
+                        font-size: 2rem;
                     }
                 }                
             }

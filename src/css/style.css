@@ -700,6 +700,7 @@ header #space {
   width: 100vw;
   gap: 2rem;
   padding-top: 4.25rem;
+  overflow-x: auto;
 }
 #mobile .big-footer .week-content h2 {
   align-self: flex-start;
@@ -735,7 +736,7 @@ header #space {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 #mobile .big-footer .week-content .week-items .week-item .activities {
   display: flex;
@@ -745,6 +746,7 @@ header #space {
 #mobile .big-footer .week-content .week-items .week-item p {
   display: flex;
   align-items: center;
+  font-size: 2rem;
 }
 #mobile .content {
   display: flex;
