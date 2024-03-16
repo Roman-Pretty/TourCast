@@ -1,19 +1,19 @@
-import '../css/App.css';
+import '../../css/App.css';
 import React, { useContext } from 'react';
-import { DayContext } from '../App';
+import { DayContext } from '../../App';
 
-import { ReactComponent as Background } from '../img/bg-blur.svg';
-import { getExtremeWeatherIdeals } from './ExtremeWeatherHelper';
+import { ReactComponent as Background } from '../../img/bg-blur.svg';
+import { getExtremeWeatherIdeals } from '../ExtremeWeatherHelper';
 
 // Extreme Weather Icon imports
-import { ReactComponent as HeatwaveIcon } from '../img/extreme_weather_icons/heatwave.svg';
-import { ReactComponent as TornadoIcon } from '../img/extreme_weather_icons/tornado.svg';
-import { ReactComponent as StormIcon } from '../img/extreme_weather_icons/storm.svg';
-import { ReactComponent as SnowstormIcon } from '../img/extreme_weather_icons/snowstorm.svg';
-import { ReactComponent as DustIcon } from '../img/extreme_weather_icons/dust.svg';
-import { ReactComponent as AshIcon } from '../img/extreme_weather_icons/ash.svg';
-import { ReactComponent as ExtremeColdIcon } from '../img/extreme_weather_icons/cold.svg';
-import { ReactComponent as SmokeIcon } from '../img/extreme_weather_icons/smoke.svg';
+import { ReactComponent as HeatwaveIcon } from '../../img/extreme_weather_icons/heatwave.svg';
+import { ReactComponent as TornadoIcon } from '../../img/extreme_weather_icons/tornado.svg';
+import { ReactComponent as StormIcon } from '../../img/extreme_weather_icons/storm.svg';
+import { ReactComponent as SnowstormIcon } from '../../img/extreme_weather_icons/snowstorm.svg';
+import { ReactComponent as DustIcon } from '../../img/extreme_weather_icons/dust.svg';
+import { ReactComponent as AshIcon } from '../../img/extreme_weather_icons/ash.svg';
+import { ReactComponent as ExtremeColdIcon } from '../../img/extreme_weather_icons/cold.svg';
+import { ReactComponent as SmokeIcon } from '../../img/extreme_weather_icons/smoke.svg';
 
 function ExtremeCard() {
 

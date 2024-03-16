@@ -1,12 +1,12 @@
 import './css/App.css';
 import React, { useEffect, useState } from 'react';
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
-import Activities from './components/Activities';
+import Header from './components/pages/Header';
+import Dashboard from './components/pages/Dashboard';
+import Activities from './components/pages/Activities';
 import useWindowDimensions from './components/WindowDimensions';
-import Mobile from './components/Mobile';
-import ExtremeWeather from './components/ExtremeWeather';
-import Weather from './components/Weather';
+import Mobile from './components/pages/Mobile';
+import ExtremeWeather from './components/pages/ExtremeWeather';
+import Weather from './components/pages/Weather';
 
 export const DayContext = React.createContext();
 export const WeekContext = React.createContext();

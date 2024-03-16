@@ -1,15 +1,15 @@
-import '../css/App.css';
+import '../../css/App.css';
 import React, { useContext } from 'react';
-import { ReactComponent as Cloudy } from '../img/weather/cloudy.svg';
-import { ReactComponent as Rainy } from '../img/weather/rainy.svg';
-import { ReactComponent as Sunny } from '../img/weather/sunny.svg';
-import { ReactComponent as Stormy } from '../img/weather/stormy.svg';
-import { ReactComponent as Background } from '../img/bg.svg';
-import { ReactComponent as RainyWeek } from '../img/weather/week/Rainy.svg';
-import { ReactComponent as SunWeek } from '../img/weather/week/Sun.svg';
-import { ReactComponent as StormyWeek } from '../img/weather/week/Stormy.svg';
-import { ReactComponent as CloudyWeek } from '../img/weather/week/Cloudy.svg';
-import { WeekContext, DayContext } from '../App';
+import { ReactComponent as Cloudy } from '../../img/weather/cloudy.svg';
+import { ReactComponent as Rainy } from '../../img/weather/rainy.svg';
+import { ReactComponent as Sunny } from '../../img/weather/sunny.svg';
+import { ReactComponent as Stormy } from '../../img/weather/stormy.svg';
+import { ReactComponent as Background } from '../../img/bg.svg';
+import { ReactComponent as RainyWeek } from '../../img/weather/week/Rainy.svg';
+import { ReactComponent as SunWeek } from '../../img/weather/week/Sun.svg';
+import { ReactComponent as StormyWeek } from '../../img/weather/week/Stormy.svg';
+import { ReactComponent as CloudyWeek } from '../../img/weather/week/Cloudy.svg';
+import { WeekContext, DayContext } from '../../App';
 
 function TodayWeather() {
 

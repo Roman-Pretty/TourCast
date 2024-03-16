@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { WeekContext } from '../App';
+import { WeekContext } from '../../App';
 
-import { ReactComponent as Background } from '../img/bg-blur.svg';
-import { ReactComponent as Cloudy } from '../img/weather/cloudy.svg';
-import { ReactComponent as Rainy } from '../img/weather/rainy.svg';
-import { ReactComponent as Sunny } from '../img/weather/sunny.svg';
-import { ReactComponent as Stormy } from '../img/weather/stormy.svg';
+import { ReactComponent as Background } from '../../img/bg-blur.svg';
+import { ReactComponent as Cloudy } from '../../img/weather/cloudy.svg';
+import { ReactComponent as Rainy } from '../../img/weather/rainy.svg';
+import { ReactComponent as Sunny } from '../../img/weather/sunny.svg';
+import { ReactComponent as Stormy } from '../../img/weather/stormy.svg';
 
 function Card({ day, weather, temp, rain, humidity, windSpeed, cloudCover }) {
   let weatherIcon;

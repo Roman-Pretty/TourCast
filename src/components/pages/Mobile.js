@@ -1,17 +1,17 @@
-import '../css/App.css';
+import '../../css/App.css';
 import React, { useState, useContext, useEffect } from 'react';
-import { ReactComponent as Background } from '../img/bg-mobile.svg';
+import { ReactComponent as Background } from '../../img/bg-mobile.svg';
 
-import { ReactComponent as Cloudy } from '../img/weather/cloudy.svg';
-import { ReactComponent as Rainy } from '../img/weather/rainy.svg';
-import { ReactComponent as Sunny } from '../img/weather/sunny.svg';
-import { ReactComponent as Stormy } from '../img/weather/stormy.svg';
+import { ReactComponent as Cloudy } from '../../img/weather/cloudy.svg';
+import { ReactComponent as Rainy } from '../../img/weather/rainy.svg';
+import { ReactComponent as Sunny } from '../../img/weather/sunny.svg';
+import { ReactComponent as Stormy } from '../../img/weather/stormy.svg';
 
-import { ActivityCard } from './ActivityCard';
-import { getIdeals } from './IdealsHelper';
-import { getExtremeWeatherIdeals } from './ExtremeWeatherHelper';
+import { ActivityCard } from '../ActivityCard';
+import { getIdeals } from '../IdealsHelper';
+import { getExtremeWeatherIdeals } from '../ExtremeWeatherHelper';
 
-import { DayContext, WeekContext, CityContext } from '../App';
+import { DayContext, WeekContext, CityContext } from '../../App';
 import axios from 'axios';
 
 function CardArray() {
@@ -47,7 +47,7 @@ function ExtremeWeather() {
 
   useEffect(() => {
     if (weatherData != null) {
-      
+
       // Set the extreme weather
       setExtremeWeather(getExtremeWeatherIdeals(
         Math.round(weatherData.main.temp),
@@ -68,6 +68,49 @@ function ExtremeWeather() {
     </div>
   );
 
+}
+
+function Footer() {
+
+  const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setSelected(!selected);
+  };
+
+  if (selected) {
+    return (
+      <footer className='big-footer'>
+          <a href='#' onClick={handleClick}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="6" viewBox="0 0 78 6" fill="none">
+              <path d="M3.10254 3L74.8974 3.00001" stroke="url(#paint0_linear_59_2057)" stroke-width="6" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="paint0_linear_59_2057" x1="39" y1="3" x2="39" y2="4" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#07FFFF" />
+                  <stop stop-color="#4CE0E0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </a>
+        </footer>
+    );
+  } 
+
+  return (
+    <footer>
+        <a href='#' onClick={handleClick}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="78" height="6" viewBox="0 0 78 6" fill="none">
+            <path d="M3.10254 3L74.8974 3.00001" stroke="url(#paint0_linear_59_2057)" stroke-width="6" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="paint0_linear_59_2057" x1="39" y1="3" x2="39" y2="4" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#07FFFF" />
+                <stop stop-color="#4CE0E0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+      </footer>
+  );
 }
 
 const Mobile = () => {
@@ -136,7 +179,7 @@ const Mobile = () => {
 
   return (
     <div id='mobile'>
-       <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
       <fieldset>
         <input type="text" value={city} onChange={handleInputChange}></input>
         <button type='submit' className={isLoading}>
@@ -163,19 +206,7 @@ const Mobile = () => {
         <CardArray />
       </div>
       <Background />
-      <footer>
-        <a href='#'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="78" height="6" viewBox="0 0 78 6" fill="none">
-            <path d="M3.10254 3L74.8974 3.00001" stroke="url(#paint0_linear_59_2057)" stroke-width="6" stroke-linecap="round" />
-            <defs>
-              <linearGradient id="paint0_linear_59_2057" x1="39" y1="3" x2="39" y2="4" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#07FFFF" />
-                <stop stop-color="#4CE0E0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 };
