@@ -6,6 +6,7 @@ import Activities from './components/Activities';
 import useWindowDimensions from './components/WindowDimensions';
 import Mobile from './components/Mobile';
 import ExtremeWeather from './components/ExtremeWeather';
+import Weather from './components/Weather';
 
 export const DayContext = React.createContext();
 export const WeekContext = React.createContext();
@@ -19,17 +20,19 @@ const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [weekData, setWeekData] = useState(null);
   const [city, setCity] = useState('London');
-  const { height, width } = useWindowDimensions();
+  const {height, width } = useWindowDimensions();
 
   useEffect(() => {
     if (width <= 768) {
       setPageComponent(<Mobile />);
-    } else if (page == 'dashboard-page') {
+    } else if (page === 'dashboard-page') {
       setPageComponent(<Dashboard />);
-    } else if (page == 'activities-page') {
+    } else if (page === 'activities-page') {
       setPageComponent(<Activities />);
-    } else if (page == 'extreme-weather-page') {
+    } else if (page === 'extreme-weather-page') {
       setPageComponent(<ExtremeWeather />);
+    } else if (page === 'weather-page') {
+      setPageComponent(<Weather />);
     } else {
       setPageComponent(null);
     }
