@@ -141,6 +141,12 @@ header {
             }
         }
 
+        // Styling for unimplemented page
+        li:has(.unimplemented) {
+            visibility: hidden;
+            cursor: unset !important;
+        }
+
         z-index: 0;
 
         ul {
@@ -201,12 +207,9 @@ header {
             left: 8.2rem !important;
         }
 
-        .pollution-page {
-            left: 11.8rem !important;
-        }
-
         .extreme-weather-page {
-            left: 15.4rem !important;
+            // left: 15.4rem !important;
+            left: 11.8rem !important;
         }
 
     }
