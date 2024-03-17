@@ -544,7 +544,7 @@ header #space {
 #activities #weekly-activities #weekly-activity-content #activity-forecast .week-item .week-item-content .week-activity-icons .tooltip {
   position: absolute;
   font-size: 1rem;
-  bottom: 4rem;
+  margin-top: 6rem;
   background-color: #202020;
   color: #EDF2F4;
   text-align: center;
