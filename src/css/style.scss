@@ -766,7 +766,7 @@ header {
     justify-content: space-between;
     padding-top: 2rem;
 
-    >svg {
+    > svg {
         position: fixed;
         bottom: 0;
         right: 0;
@@ -784,16 +784,25 @@ header {
         height: 20vw;
         flex-shrink: 0;
         transition: height 200ms ease-in-out;
+    }
 
-        svg {
-            position: fixed;
-            bottom: 15vw;
-            right: 0;
-            width: 100vw;
-            stroke-width: 6px;
-            stroke: #07FFFF;
-            transition: 200ms ease-in-out;
-        }
+    #mobile-bar {
+        position: fixed;
+        right: 0;
+        width: 100vw;
+        stroke-width: 6px;
+        stroke: #07FFFF;
+        
+    }
+
+    .low {
+        bottom: 15vw;
+        transition: bottom 200ms ease-in-out;
+    }
+
+    .high {
+        bottom: 93vh;
+        transition: bottom 500ms ease-in-out;
     }
 
     .big-footer {
@@ -804,11 +813,6 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        svg {
-            bottom: 93vh;
-            transition: 500ms ease-in-out;
-        }
 
         .week-content {
             display: inline-flex;

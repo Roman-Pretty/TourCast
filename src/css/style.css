@@ -671,14 +671,20 @@ header #space {
   flex-shrink: 0;
   transition: height 200ms ease-in-out;
 }
-#mobile footer svg {
+#mobile #mobile-bar {
   position: fixed;
-  bottom: 15vw;
   right: 0;
   width: 100vw;
   stroke-width: 6px;
   stroke: #07FFFF;
-  transition: 200ms ease-in-out;
+}
+#mobile .low {
+  bottom: 15vw;
+  transition: bottom 200ms ease-in-out;
+}
+#mobile .high {
+  bottom: 93vh;
+  transition: bottom 500ms ease-in-out;
 }
 #mobile .big-footer {
   height: 96vh;
@@ -688,10 +694,6 @@ header #space {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-#mobile .big-footer svg {
-  bottom: 93vh;
-  transition: 500ms ease-in-out;
 }
 #mobile .big-footer .week-content {
   display: inline-flex;
