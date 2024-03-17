@@ -185,8 +185,8 @@ header #space {
 /* Background */
 #dashboard > svg,
 #activities > svg,
-.raining > svg,
-#extreme-weather > svg {
+#extreme-weather > svg,
+#weather-page > svg {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -642,6 +642,93 @@ header #space {
   }
 }
 
+/***************
+ * Weather CSS *
+ ***************/
+#weather-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  gap: 2rem;
+}
+#weather-page *::-webkit-scrollbar {
+  height: 0.2rem;
+  width: 0.2rem;
+  border-radius: 20rem;
+}
+#weather-page > h1 {
+  color: #EDF2F4;
+  font-size: 3rem;
+  font-weight: 400;
+  align-self: flex-start;
+  padding-left: 8vw;
+}
+#weather-page .weather-container {
+  max-height: 70vh;
+  overflow-y: scroll !important;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+#weather-page .weather-container .day {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 20rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 1600px) {
+  #weather-page .weather-container .day {
+    width: auto;
+  }
+}
+#weather-page .weather-item:nth-child(6) {
+  margin-bottom: 1rem;
+}
+#weather-page .weather-item {
+  min-width: 26rem;
+  border-radius: 1.9375rem;
+  background: radial-gradient(133.48% 141.42% at 100% 100%, rgba(88, 103, 129, 0.8) 0%, rgba(141, 153, 174, 0.48) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 15rem;
+  gap: 2rem;
+  padding-left: 6vw;
+}
+#weather-page .weather-item h1 {
+  color: #EDF2F4;
+  font-size: 2rem;
+  font-weight: 400;
+  padding-left: 1.5rem;
+}
+#weather-page .weather-item svg {
+  width: 5vw;
+  margin-right: 2rem;
+}
+@media (max-width: 1400px) {
+  #weather-page .weather-item svg {
+    display: none;
+  }
+}
+#weather-page .weather-item ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0rem;
+}
+#weather-page .weather-item ul li {
+  font-size: 1.6rem;
+  flex-basis: calc(33.3333333333% - 1rem);
+  text-transform: capitalize;
+}
+
 /**************
  * Mobile CSS *
  **************/
@@ -666,7 +753,7 @@ header #space {
   width: 100vw;
   border-radius: 32px 32px 0 0;
   border: 1.4px solid rgba(255, 255, 255, 0.3);
-  background: radial-gradient(301.95% 171.74% at 50% 83.91%, rgba(17, 37, 72, 0.8) 0%, rgba(149, 164, 191, 0.6) 100%);
+  background: radial-gradient(301.95% 171.74% at 50% 83.91%, #112548 0%, rgba(149, 164, 191, 0.99) 100%);
   height: 20vw;
   flex-shrink: 0;
   transition: height 200ms ease-in-out;
