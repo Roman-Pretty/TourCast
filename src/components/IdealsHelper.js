@@ -1,5 +1,13 @@
+/**
+ * It's important for Tour Guides to be able to recommend activities based on their safety
+ * under certain weather conditions. This helper function provides information on the ideal conditions for
+ * each activity based on the weather data provided, and can identify when these conditions are not met.
+ */
+
+// Function to get the ideal conditions for each activity based on the weather data
 function getIdeals(temperature, weather, visibility, windSpeed, humidity) {
-    let ideals = ["Ideal","Ideal","Ideal","Ideal","Ideal","Ideal","Ideal"];
+    
+  let ideals = ["Ideal","Ideal","Ideal","Ideal","Ideal","Ideal","Ideal"];
   
     // Running
     if (visibility < 5000 || temperature < 0 || temperature > 30 || weather == "Rain" || windSpeed > 10) {

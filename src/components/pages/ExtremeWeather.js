@@ -1,9 +1,12 @@
 import '../../css/App.css';
 import React, { useContext } from 'react';
-import { DayContext } from '../../App';
 
+// Import The Background SVG and helper functions
 import { ReactComponent as Background } from '../../img/bg-blur.svg';
 import { getExtremeWeatherIdeals } from '../ExtremeWeatherHelper';
+
+// Import React Context for day weather data
+import { DayContext } from '../../App';
 
 // Extreme Weather Icon imports
 import { ReactComponent as HeatwaveIcon } from '../../img/extreme_weather_icons/heatwave.svg';
@@ -15,10 +18,12 @@ import { ReactComponent as AshIcon } from '../../img/extreme_weather_icons/ash.s
 import { ReactComponent as ExtremeColdIcon } from '../../img/extreme_weather_icons/cold.svg';
 import { ReactComponent as SmokeIcon } from '../../img/extreme_weather_icons/smoke.svg';
 
+// Extreme Weather Component
 function ExtremeCard() {
 
   const [weatherData, setWeatherData] = useContext(DayContext);
-  
+
+  // Get the current temperature and weather id
   let weather_id = 0;
   let temperature = 0;
   let extreme_array = [null, null];
@@ -34,15 +39,16 @@ function ExtremeCard() {
     extreme_weather_help = extreme_array[1];
   }
 
+  // Set the extreme weather icon based on the extreme weather
   let icon = null;
   if (extreme_weather == "Heatwave") { icon = <HeatwaveIcon />; } else
     if (extreme_weather == "Tornado") { icon = <TornadoIcon />; } else
       if (extreme_weather == "Thunderstorm") { icon = <StormIcon />; } else
         if (extreme_weather == "Snowstorm") { icon = <SnowstormIcon />; } else
           if (extreme_weather == "Dust") { icon = <DustIcon />; } else
-            if (extreme_weather == "Ash") { icon = <AshIcon />; } else 
-              if (extreme_weather == "Extreme Cold") { icon = <ExtremeColdIcon />; } else 
-                if (extreme_weather == "Smoke") { icon = <SmokeIcon />;}
+            if (extreme_weather == "Ash") { icon = <AshIcon />; } else
+              if (extreme_weather == "Extreme Cold") { icon = <ExtremeColdIcon />; } else
+                if (extreme_weather == "Smoke") { icon = <SmokeIcon />; }
 
   if (extreme_weather == "None") {
     return (
@@ -51,6 +57,8 @@ function ExtremeCard() {
       </div>
     )
   }
+
+  // Render the ExtremeCard component with the extreme weather data
   return (
     <div id="extreme-content">
       <div class="extreme-card">
@@ -69,11 +77,11 @@ function ExtremeCard() {
 const ExtremeWeather = () => {
 
   return (
-      <div id="extreme-weather">
-        <h1>Extreme Weather</h1>
-          <ExtremeCard />
-          <Background />
-      </div>
+    <div id="extreme-weather">
+      <h1>Extreme Weather</h1>
+      <ExtremeCard />
+      <Background />
+    </div>
   );
 };
 export default ExtremeWeather;

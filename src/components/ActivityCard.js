@@ -1,3 +1,5 @@
+
+// Importing the icon SVGs
 import { ReactComponent as Run } from '../img/activity_icons/directions_run.svg';
 import { ReactComponent as Camping } from '../img/activity_icons/camping.svg';
 import { ReactComponent as Skiing } from '../img/activity_icons/downhill_skiing.svg';
@@ -6,6 +8,7 @@ import { ReactComponent as Hiking } from '../img/activity_icons/hiking.svg';
 import { ReactComponent as Surfing } from '../img/activity_icons/surfing.svg';
 import { ReactComponent as Telescope } from '../img/activity_icons/telescope.svg';
 
+// Activity card component
 function ActivityCard({ activity="Running", ideal="Ideal" }) {
 
     let className = "rating rating-" + ideal.toLowerCase();
@@ -20,6 +23,7 @@ function ActivityCard({ activity="Running", ideal="Ideal" }) {
               if (activity == "Watersport") { icon = <Surfing />; } else
                 if (activity == "Stargazing") { icon = <Telescope />; }
   
+    // Return the activity card with passed activity data props
     return (
       <div class={cardType}>
         <div class="card-content">

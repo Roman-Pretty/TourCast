@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
 import { DayContext, WeekContext } from '../../App';
 
+// Import SVGs
 import { ReactComponent as Background } from '../../img/bg-blur.svg';
 import { ReactComponent as Cloudy } from '../../img/weather/cloudy.svg';
 import { ReactComponent as Rainy } from '../../img/weather/rainy.svg';
 import { ReactComponent as Sunny } from '../../img/weather/sunny.svg';
 import { ReactComponent as Stormy } from '../../img/weather/stormy.svg';
 
+// Weather item component
 function WeatherItem({ day, weather, temperature, feelsLike, humidity, wind, pressure, icon }) {
 
+  // Set the weather icon based on the weather provided
   let weatherComponent = <Cloudy />;
 
   if (icon === "Rain") {
@@ -21,6 +24,7 @@ function WeatherItem({ day, weather, temperature, feelsLike, humidity, wind, pre
     weatherComponent = <Cloudy />;
   }
 
+  // Return the weather item with passed weather data props
   return (
     <div className="weather-item">
       <div className='day'>
@@ -40,11 +44,15 @@ function WeatherItem({ day, weather, temperature, feelsLike, humidity, wind, pre
   );
 }
 
+// Weather component
 const Weather = () => {
 
   const [weatherData, setWeatherData] = useContext(DayContext);
   const [weekData, setWeekData] = useContext(WeekContext);
 
+  // Set the default weather data for each day
+  // Each index is a new day, starting from today
+  //
   let icon = ["Rain", "Rain", "Rain", "Rain", "Rain", "Rain"];
   let weather = ["Rain", "Rain", "Rain", "Rain", "Rain", "Rain"];
   let temperature = ["20", "20", "20", "20", "20", "20"];
@@ -53,6 +61,7 @@ const Weather = () => {
   let wind = ["10", "10", "10", "10", "10", "10"];
   let pressure = ["12", "12", "12", "12", "12", "12"];
 
+  // If the weather data is not null, set the weather data for today
   if (weatherData != null) {
     icon[0] = weatherData.weather[0].main;
     weather[0] = weatherData.weather[0].description;
@@ -63,6 +72,7 @@ const Weather = () => {
     pressure[0] = weatherData.main.pressure;
   }
 
+  // If the week data is not null, set the weather data for the next 5 days
   if (weekData != null) {
     for (let i = 1; i < 6; i++) {
       icon[i] = weekData.list[i].weather[0].main;
@@ -80,6 +90,7 @@ const Weather = () => {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var day = [days[now.getDay() + 1], days[now.getDay() + 2], days[now.getDay() + 3], days[now.getDay() + 4], days[now.getDay() + 5]];
 
+  // Return the weather page with the weather items
   return (
     <div id="weather-page">
       <h1>Weather Overview</h1>

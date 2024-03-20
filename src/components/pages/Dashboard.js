@@ -1,20 +1,27 @@
 import '../../css/App.css';
 import React, { useContext } from 'react';
+
+// Import The Background and Weather SVGs
 import { ReactComponent as Cloudy } from '../../img/weather/cloudy.svg';
 import { ReactComponent as Rainy } from '../../img/weather/rainy.svg';
 import { ReactComponent as Sunny } from '../../img/weather/sunny.svg';
 import { ReactComponent as Stormy } from '../../img/weather/stormy.svg';
-import { ReactComponent as Background } from '../../img/bg.svg';
+
 import { ReactComponent as RainyWeek } from '../../img/weather/week/Rainy.svg';
 import { ReactComponent as SunWeek } from '../../img/weather/week/Sun.svg';
 import { ReactComponent as StormyWeek } from '../../img/weather/week/Stormy.svg';
 import { ReactComponent as CloudyWeek } from '../../img/weather/week/Cloudy.svg';
+
+import { ReactComponent as Background } from '../../img/bg.svg';
+
+// Import React Context for week and day weather data
 import { WeekContext, DayContext } from '../../App';
 
 function TodayWeather() {
 
   const [weatherData, setWeatherData] = useContext(DayContext);
 
+  // Get the current temperature, feels like temperature and weather
   let temperature = 0;
   let feelsLike = 0;
   let weather = "No Data";
@@ -24,6 +31,7 @@ function TodayWeather() {
     weather = weatherData.weather[0].main;
   }
 
+  // Set the weather component svg based on the weather
   let weatherComponent = <Cloudy />;
 
   if (weather === "Rain") {
@@ -36,6 +44,7 @@ function TodayWeather() {
     weatherComponent = <Cloudy />;
   }
 
+  // Render the TodayWeather component with the current weather data
   return (
     <div id="today-weather">
       <div id="today-weather-text">
@@ -50,7 +59,10 @@ function TodayWeather() {
   );
 }
 
+// Render the weather for a specific day
 function WeekItem({ day, weather, temp }) {
+  
+  // Set the weather component svg based on the weather
   let weatherComponent = <CloudyWeek />;
 
   if (weather === "Rain") {
@@ -63,6 +75,7 @@ function WeekItem({ day, weather, temp }) {
     weatherComponent = <CloudyWeek />;
   }
 
+  // Render the WeekItem component with the weather data
   return (
     <div class="week-item">
       <div class="week-item-divider"></div>
@@ -77,6 +90,7 @@ function WeekItem({ day, weather, temp }) {
   );
 }
 
+// Render the weather for the next 4 days
 function Forecast() {
 
   const [weekData, setWeekData] = useContext(WeekContext);
@@ -96,6 +110,7 @@ function Forecast() {
     }
   }
 
+  // Render the Forecast component with the weather data for the next 4 days
   return (
     <div id="forecast">
       <WeekItem day={day[0]} weather={weathers[0]} temp={temperatures[0]} />
@@ -106,6 +121,7 @@ function Forecast() {
   );
 }
 
+// Render the Dashboard page with the TodayWeather and Forecast components
 const Dashboard = () => {
   return (
     <div class="content">

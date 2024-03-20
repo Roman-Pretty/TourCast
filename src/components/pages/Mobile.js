@@ -1,3 +1,12 @@
+/**
+ * Mobile is implemented as an entirely new component that is displayed on the mobile version of the website.
+ * 
+ * The reason for for this seperate implementation is the differing needs of our stakeholder when
+ * they are not in the office. Tour Guides and outdoor activity enthusiasts are often on the move
+ * and need a quick and easy way to check what activities are ideal for the day and the week.
+ */
+
+// Standard react imports
 import '../../css/App.css';
 import React, { useState, useContext, useEffect } from 'react';
 import { ReactComponent as Background } from '../../img/bg-mobile.svg';
@@ -17,14 +26,21 @@ import { ReactComponent as WeekHiking } from '../../img/activity_icons/week_icon
 import { ReactComponent as WeekSurfing } from '../../img/activity_icons/week_icons/surfing.svg';
 import { ReactComponent as WeekStar } from '../../img/activity_icons/week_icons/star.svg';
 
+
+// Import Helper Functions and Components
 import { ActivityCard } from '../ActivityCard';
 import { getIdeals } from '../IdealsHelper';
 import { getExtremeWeatherIdeals } from '../ExtremeWeatherHelper';
 
+// Import React Contexts
 import { DayContext, WeekContext, CityContext } from '../../App';
 import axios from 'axios';
 
+// Display the activities in a swipeable carousel of cards
 function CardArray() {
+
+  // Same ideal logic as found on the activities page
+  // Seperate implementation as it works differently on the mobile page
   const [weatherData, setWeatherData] = useContext(DayContext);
   let ideals = ["Ideal", "Ideal", "Ideal", "Ideal", "Ideal", "Ideal", "Ideal"];
 
@@ -49,6 +65,7 @@ function CardArray() {
   );
 }
 
+// Display the extreme weather notification
 function ExtremeWeather() {
 
   const [weatherData, setWeatherData] = useContext(DayContext);
@@ -72,6 +89,7 @@ function ExtremeWeather() {
     }
   }, [weatherData]);
 
+  // Only display an extreme weather notification if there is one
   return (
     <div id='extreme-weather' className={isDisabled}>
       <h1>{extremeWeather + "!"}</h1>
@@ -80,6 +98,7 @@ function ExtremeWeather() {
 
 }
 
+// Display the week's weather and activities
 function WeekItem({ day, weather, temp, levels }) {
 
   let weatherComponent = <Cloudy />;
@@ -94,6 +113,8 @@ function WeekItem({ day, weather, temp, levels }) {
     weatherComponent = <Cloudy />;
   }
 
+  // Display the activities that are ideal for each day of the week when
+  // the bottom scrollbar is pulled up
   return (
     <div className='week-item'>
       <div className='day'>
@@ -115,6 +136,7 @@ function WeekItem({ day, weather, temp, levels }) {
 
 }
 
+// Display the week's weather
 function MobileWeek() {
 
   const [weekData, setWeekData] = useContext(WeekContext);
@@ -134,6 +156,7 @@ function MobileWeek() {
       temperatures[i] = Math.round(weekData.list[i].main.temp);
     }
 
+    // Get the ideal activities for the next 4 days
     ideals = [["Warning", "Warning", "Warning", "Warning", "Warning", "Warning", "Warning"],
     ["Warning", "Warning", "Warning", "Warning", "Warning", "Warning", "Warning"],
     ["Warning", "Warning", "Warning", "Warning", "Warning", "Warning", "Warning"],
@@ -150,6 +173,7 @@ function MobileWeek() {
     }
   }
 
+  // Display the week's weather and activities
   return (
     <div className='week-content'>
       <h2>5-Day Forecast</h2>
@@ -164,10 +188,12 @@ function MobileWeek() {
   );
 }
 
+// Display the footer with the week's weather (The scroll bar at the bottom)
 function Footer() {
 
   const [selected, setSelected] = useState(false);
 
+  // Handle the click event to show the week's weather or not
   const handleClick = () => {
     setSelected(!selected);
   };
@@ -175,6 +201,8 @@ function Footer() {
   let className = selected ? 'big-footer' : 'small-footer';
   let svg = selected ? 'high' : 'low';
 
+  // Display the footer with the week's weather, either as down when not selected, or up
+  // when selected
     return (
       <footer className={className}>
         {selected ? <MobileWeek /> : null}
@@ -193,6 +221,7 @@ function Footer() {
     );
 }
 
+// The mobile page that displays the current weather and activities
 const Mobile = () => {
 
   const [city, setCity] = useContext(CityContext);
@@ -202,6 +231,8 @@ const Mobile = () => {
 
   const fetchData = async () => {
     setIsLoading('loading');
+
+    // Fetch the current weather data
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
@@ -211,6 +242,7 @@ const Mobile = () => {
       console.error(error);
     }
 
+    // Fetch the week weather data
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
@@ -221,12 +253,18 @@ const Mobile = () => {
     }
     setIsLoading(null);
   };
+
+  // Fetch the weather data for the current city on page load
   useEffect(() => {
     fetchData();
   }, []);
+
+  // Handle the input change for the city search
   const handleInputChange = (e) => {
     setCity(e.target.value);
   };
+
+  // Handle the form submit for the city search
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData();
@@ -257,6 +295,7 @@ const Mobile = () => {
     weatherComponent = <Cloudy />;
   }
 
+  // Display the mobile page with the current weather and activities
   return (
     <div id='mobile'>
       <form onSubmit={handleSubmit}>

@@ -1,6 +1,8 @@
 import '../css/App.css';
 import React, { useContext } from 'react';
-import { DayContext, WeekContext } from '../App';
+
+// Import the week context
+import { WeekContext } from '../App';
 import { getIdeals } from './IdealsHelper';
 
 // Week Imports
@@ -18,8 +20,10 @@ import { ReactComponent as SunWeek } from '../img/weather/week/Sun.svg';
 import { ReactComponent as StormyWeek } from '../img/weather/week/Stormy.svg';
 import { ReactComponent as CloudyWeek } from '../img/weather/week/Cloudy.svg';
 
+// Week item component
 function WeekItem({ day, weather, temp, levels }) {
 
+  // Set the weather icon based on the weather provided
     let weatherComponent = <CloudyWeek />;
   
     if (weather === "Rain") {
@@ -32,6 +36,7 @@ function WeekItem({ day, weather, temp, levels }) {
       weatherComponent = <CloudyWeek />;
     }
   
+    // Return the week item with passed weather data props and selected icon
     return (
       <div className='week-item'>
         <div className='v-div'></div>
@@ -61,6 +66,7 @@ function WeekItem({ day, weather, temp, levels }) {
     );
   }
 
+  // Activity overview component
 const ActivityOverview = () => {
     const [weekData, setWeekData] = useContext(WeekContext);
     let ideals = null;
@@ -79,6 +85,7 @@ const ActivityOverview = () => {
         temperatures[i] = Math.round(weekData.list[i].main.temp);
       }
   
+      // Set the weekly defaults for the weather data
       ideals = [["Warning", "Warning", "Warning", "Warning", "Warning", "Warning", "Warning"],
       ["Warning", "Warning", "Warning", "Warning", "Warning", "Warning", "Warning"],
       ["Warning", "Warning", "Warning", "Warning", "Warning", "Warning", "Warning"],
@@ -95,6 +102,7 @@ const ActivityOverview = () => {
       }
     }
   
+    // Return the weekly activities with the week items
     return (
       <div id="weekly-activities">
         <div id="weekly-activity-content">

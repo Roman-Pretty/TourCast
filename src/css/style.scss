@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shanti&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+// Variables for Colours
 $header: #202020;
 $text: #EDF2F4;
 $background: #2B2D42;
@@ -30,7 +31,7 @@ body {
     overflow: hidden;
 }
 
-// Form
+// Searchbar styling for the header
 fieldset {
     width: 26.5rem;
     flex-shrink: 0;
@@ -120,6 +121,7 @@ header {
     font-size: 1.6rem;
     z-index: -1;
 
+    // When the screen gets smaller, the searchbar will move to the right of the screen
     @media (max-width:1200px) {
         #space {
             display: none;
@@ -128,6 +130,7 @@ header {
 
     nav {
 
+        // Styling for the navigation bar's disables elements
         .disabled {
             opacity: 0.5;
             pointer-events: none;
@@ -149,6 +152,7 @@ header {
 
         z-index: 0;
 
+        // Styling for the navigation bar list on the left side of the screen
         ul {
             display: flex;
             flex-direction: row;
@@ -165,6 +169,7 @@ header {
                 justify-content: center;
                 cursor: pointer;
 
+                // Styling for the tooltip - shown when hovered
                 .tooltip {
                     position: absolute;
                     font-size: 1rem;
@@ -184,6 +189,8 @@ header {
             }
         }
 
+        // Selected items are displayed by a red background. This absolute positioning implementation
+        // allows for a sliding css transition
         #selected {
             background-color: $primary;
             position: absolute;
@@ -195,6 +202,7 @@ header {
             transition: 300ms ease-in-out;
         }
 
+        // Positioning based on selected page
         .dashboard-page {
             left: 1rem !important;
         }

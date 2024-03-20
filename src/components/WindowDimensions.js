@@ -1,3 +1,8 @@
+// This hook is used to get the window dimensions of the browser window.
+// This is used to determine the size of the screen and adjust the layout of the website accordingly.
+//
+// This is included to switch to the mobile implementation when required
+
 // useWindowDimensions hook created by https://stackoverflow.com/users/4484822/qop
 
 import { useState, useEffect } from 'react';

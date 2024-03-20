@@ -1,13 +1,18 @@
 import React, { useState, useContext, useEffect } from 'react';
+
+// Import the SVGs for the menu icons
 import { ReactComponent as MenuIcon } from '../../img/menu_icons/menu.svg';
 import { ReactComponent as RunIcon } from '../../img/menu_icons/directions_run.svg';
 import { ReactComponent as PollutionIcon } from '../../img/menu_icons/Pollution 1.svg';
 import { ReactComponent as WindIcon } from '../../img/menu_icons/Wind 1.svg';
 import { ReactComponent as CloudIcon } from '../../img/menu_icons/cloud.svg';
+
+// Import all React Contexts as they are set in the header
 import { DayContext, WeekContext, PageContext, CityContext } from '../../App';
 import { getExtremeWeatherIdeals } from '../ExtremeWeatherHelper';
 import axios from 'axios';
 
+// Tooltip component for the menu icons
 function Tooltip({ text }) {
   return (
     <p class="tooltip">
@@ -16,12 +21,15 @@ function Tooltip({ text }) {
   );
 }
 
+// Navigation component for the header
 function Nav() {
 
+  // Get the current page, weather data and if the extreme weather page is disabled
   const [page, setPage] = useContext(PageContext);
   const [weatherData, setWeatherData] = useContext(DayContext);
   const [isDisabled, setIsDisabled] = useState("none");
 
+  // If the weather data is available, check if the extreme weather page should be disabled
   useEffect(() => {
     if (weatherData != null) {
       let isDisabled = getExtremeWeatherIdeals(
@@ -47,15 +55,22 @@ function Nav() {
   );
 }
 
+// Title component for the header
 function Title() {
 
+  // Get the current city and weather data
   const [city, setCity] = useContext(CityContext);
   const [weatherData, setWeatherData] = useContext(DayContext);
   const [weekData, setWeekData] = useContext(WeekContext);
   const [isLoading, setIsLoading] = useState('loading');
 
+  // Fetch the weather data for the current city
   const fetchData = async () => {
+
+    // Set the loading state of the search button to loading
     setIsLoading('loading');
+
+    // Fetch the current weather data
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
@@ -65,6 +80,7 @@ function Title() {
       console.error(error);
     }
 
+    // Fetch the week weather data
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=717fad74b9058562c326494dcbd56f58`
@@ -73,19 +89,28 @@ function Title() {
     } catch (error) {
       console.error(error);
     }
+
+    // Set the loading state of the search button to not loading
     setIsLoading(null);
   };
+
+  // Fetch the weather data for the current city on page load
   useEffect(() => {
     fetchData();
   }, []);
+
+  // Handle the input change for the city search
   const handleInputChange = (e) => {
     setCity(e.target.value);
   };
+
+  // Handle the form submit for the city search
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData();
   };
 
+  // Render the title component with the city search form
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
@@ -103,6 +128,7 @@ function Title() {
   );
 }
 
+// Header component for the page
 const Header = () => {
   return (
     <header>

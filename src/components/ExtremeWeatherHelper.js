@@ -1,3 +1,12 @@
+/**
+ * As it is important for Tour Guides to ensure the safety of tourists, this helper function
+ * provides information on how to deal with extreme weather conditions based on the temperature,
+ * and can identify when this information is relevant.
+ */
+
+// This function takes in the temperature and weather_id of a location and returns the
+// extreme weather conditions and how to deal with them.
+
 function getExtremeWeatherIdeals(temperature, weather_id) {
     let extreme_weather = ["None", "None"]; //First has actual extreme_weather, second has info on how to deal with it
 
